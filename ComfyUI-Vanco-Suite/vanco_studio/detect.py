@@ -15,12 +15,46 @@ _NMS = 0.45
 _SIZE = 640
 
 
+_YOLO_NAME = "yolov8n.onnx"
+
+
+def _model_roots():
+    """所有可能的 models 根目录：本地 + extra_model_paths 注册的共享目录 + 环境变量。
+
+    之前只查 folder_paths.models_dir（本地 ComfyUI/models），
+    而桌面版的模型其实放在 ComfyUI-Shared/models，导致检测静默失效。
+    """
+    roots = []
+    env = os.environ.get("VANCO_YOLO_DIR")
+    if env:
+        roots.append(env)
+    try:
+        roots.append(folder_paths.models_dir)
+    except Exception:
+        pass
+    # 从已注册的模型目录反推各自的 models 根
+    try:
+        for dirs, _exts in (folder_paths.folder_names_and_paths or {}).values():
+            for d in (dirs or []):
+                roots.append(os.path.dirname(os.path.abspath(d)))
+                roots.append(os.path.dirname(os.path.dirname(os.path.abspath(d))))
+    except Exception:
+        pass
+    roots.append(r"D:\Comfy-Desktop\ComfyUI-Shared\models")
+    out = []
+    for r in roots:
+        if r and r not in out:
+            out.append(r)
+    return out
+
+
 def _model_path():
-    for sub in ("yolo", ""):
-        d = os.path.join(folder_paths.models_dir, sub) if sub else folder_paths.models_dir
-        p = os.path.join(d, "yolov8n.onnx")
-        if os.path.exists(p):
-            return p
+    for root in _model_roots():
+        for sub in ("yolo", "", "detection", os.path.join("ultralytics", "bbox")):
+            d = os.path.join(root, sub) if sub else root
+            p = os.path.join(d, _YOLO_NAME)
+            if os.path.exists(p):
+                return p
     return None
 
 

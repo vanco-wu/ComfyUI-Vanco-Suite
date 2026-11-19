@@ -125,7 +125,7 @@ class VancoChainEngine:
                 "下游处理": (["只跑这一段", "级联重跑"], {"default": "只跑这一段", "tooltip": "级联重跑：第 N+1、N+2… 若写「续接=上一段」则跟着重跑，保证衔接"}),
                 "精确重跑": (["关", "首尾帧"], {"default": "关", "tooltip": "重跑第N段时，用第N+1段的首帧当终点，避免牵连下游"}),
                 "接缝处理": (["关", "微淡化", "微淡化+逐段色彩归一"], {"default": "微淡化", "tooltip": "微淡化=接缝交叉淡化；+逐段色彩归一=每段都对齐到第一段的亮度/饱和"}),
-                "参考尾帧数": (["1", "5", "22", "39"], {"default": "1", "tooltip": "只喂最后一帧=1；5/22/39=喂一段参考视频（会统一裁到 17k+5）"}),
+                "参考尾帧数": ("INT", {"default": 1, "min": 1, "max": 64, "tooltip": "大于1=额外喂一段参考视频（自动吸附到 17k+5：5/22/39/56）；1=只喂最后一帧"}),
                 "硬接模式": (["关", "每段锚定上段尾帧"], {"default": "关", "tooltip": "开=每段用 FL2VA 的 first_frame 硬锚上一段尾帧（构图/景别锁死）。需要接 h3_bundle 且配了 FL2VA 模型"}),
                 "尾帧取样": (["最后一帧", "倒数第2帧"], {"default": "倒数第2帧", "tooltip": "倒数第2帧通常比最后一帧干净，接缝更稳"}),
                 "人物检测": ("BOOLEAN", {"default": False, "tooltip": "每段检测前 N 帧有没有人、人数是否符合剧本「角色=」的数量；只报告，不影响生成"}),
@@ -155,7 +155,7 @@ class VancoChainEngine:
             保存分段=True, 参考尺寸="match", 引擎也存成片=False, 剧本名="未命名剧本",
             省内存模式=False, 段间清理="关",
             只跑第N段=0, 重跑后交给画布=False, 上游已变时="停下提醒", 下游处理="只跑这一段",
-            精确重跑="关", 接缝处理="微淡化", 参考尾帧数="1", 尾帧取样="倒数第2帧",
+            精确重跑="关", 接缝处理="微淡化", 参考尾帧数=1, 尾帧取样="倒数第2帧",
             人物检测=False, 检测帧数=12, 自动裁空镜=False, 成片只存画布=True, 硬接模式="关",
             素材=None, 名字列表="", 默认秒数=8.0, 分镜输入=None, h3_bundle=None,
             输出设置=None, 重跑设置=None, 质检设置=None):
@@ -297,10 +297,23 @@ class VancoChainEngine:
                 start_from_asset = True
                 start_idx = idx
             ref_vid = None
-            if int(参考尾帧数 or 1) > 1 and s["n"] > 1:
+            want_tail = int(参考尾帧数 or 1)
+            if want_tail > 1:
+                # 吸附到 H3 合法的 17k+5 长度，避免用户填 7 这种值时采样异常
+                snap = 5
+                for cand in (5, 22, 39, 56):
+                    if want_tail <= cand:
+                        snap = cand
+                        break
+                else:
+                    snap = 56
+                if snap != want_tail:
+                    print("[Vanco] 参考尾帧数 %d 吸附为 %d（H3 需要 17k+5 长度）" % (want_tail, snap))
+                want_tail = snap
+            if want_tail > 1 and s["n"] > 1:
                 prev_file = self._latest_seg(seg_dir, s["n"] - 1)
                 if prev_file:
-                    ref_vid = self._last_frames(prev_file, int(参考尾帧数))
+                    ref_vid = self._last_frames(prev_file, want_tail)
                     if ref_vid is not None:
                         print("[Vanco] 参考尾帧: 第 %d 段最后 %d 帧" % (s["n"] - 1, ref_vid.shape[0]))
 
@@ -435,12 +448,20 @@ class VancoChainEngine:
             frames, audio = self._read_back(merged_file)
             return (frames, audio, len(all_frames), "\n".join(seg_files))
 
-        # 单成片模式：段间淡化在内存完成，不写引擎副本
+        # 单成片模式：段间淡化在内存完成；引擎副本由「引擎也存成片」决定
         if 成片只存画布 and 保存分段 and seg_files:
             k = 3 if "微淡化" in str(接缝处理) else 0
             merged = self._blend_segments(all_frames, k)
-            self._finish_report(剧本名, stamp, seg_files, None)
-            print("[Vanco] 单成片模式：帧 %s 交给画布（引擎不另存）" % (tuple(merged.shape),))
+            mf_single = None
+            if 引擎也存成片:
+                try:
+                    mf_single = self._concat_all(seg_dir, 剧本名, stamp, seg_files, 接缝处理)
+                    print("[Vanco] 单成片模式：引擎副本", mf_single)
+                except Exception as e:
+                    print("[Vanco] 单成片模式：引擎副本失败", e)
+            self._finish_report(剧本名, stamp, seg_files, mf_single)
+            print("[Vanco] 单成片模式：帧 %s 交给画布" % (tuple(merged.shape),))
+            print("[Vanco] 提示：画布 SaveVideo 的前缀必须指向 …/%s/成片/，否则成片会落到别的目录" % 剧本名)
             return (merged, self._join_audio(audios), len(all_frames), "\n".join(seg_files))
 
         # 全跑时若开了接缝处理，也拼一份带淡化的成片（画布那份照旧带元数据）

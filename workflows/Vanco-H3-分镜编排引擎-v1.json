@@ -206,7 +206,7 @@
     586
    ],
    "flags": {},
-   "order": 13,
+   "order": 14,
    "mode": 0,
    "inputs": [
     {
@@ -495,7 +495,7 @@
     "级联重跑",
     "首尾帧",
     "微淡化+逐段色彩归一",
-    "1",
+    1,
     "每段锚定上段尾帧",
     "最后一帧",
     true,
@@ -554,7 +554,7 @@
     180
    ],
    "flags": {},
-   "order": 14,
+   "order": 15,
    "mode": 0,
    "inputs": [
     {
@@ -670,10 +670,10 @@
    ],
    "size": [
     340,
-    546.8
+    450
    ],
    "flags": {},
-   "order": 16,
+   "order": 17,
    "mode": 0,
    "inputs": [
     {
@@ -767,7 +767,7 @@
     250
    ],
    "flags": {},
-   "order": 15,
+   "order": 16,
    "mode": 4,
    "inputs": [
     {
@@ -920,7 +920,7 @@
     370
    ],
    "flags": {},
-   "order": 18,
+   "order": 19,
    "mode": 4,
    "inputs": [
     {
@@ -1009,10 +1009,10 @@
    ],
    "size": [
     420,
-    178
+    180
    ],
    "flags": {},
-   "order": 17,
+   "order": 18,
    "mode": 4,
    "inputs": [
     {
@@ -1118,7 +1118,7 @@
     440
    ],
    "flags": {},
-   "order": 20,
+   "order": 21,
    "mode": 4,
    "inputs": [
     {
@@ -1207,10 +1207,10 @@
    ],
    "size": [
     560,
-    244
+    284
    ],
    "flags": {},
-   "order": 12,
+   "order": 13,
    "mode": 0,
    "inputs": [
     {
@@ -1273,11 +1273,11 @@
     }
    },
    "widgets_values": [
-    "[{\"name\":\"MiniMax_H3\\\\功能\\\\动作逻辑强化-h3_Better_NSFW_Motion_V1.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\功能\\\\解剖优化多参-MysticXXX_MMH3-V5-ref2va.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\加速\\\\TaoMate-HD-preview-comfy.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\加速\\\\taomate_h3_3step_comfy.safetensors\",\"strength\":0.3,\"enabled\":false}]",
+    "[{\"name\":\"MiniMax_H3\\\\功能\\\\动作逻辑强化-h3_Better_NSFW_Motion_V1.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\功能\\\\解剖优化多参-MysticXXX_MMH3-V5-ref2va.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\加速\\\\TaoMate-HD-preview-comfy.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\功能\\\\舌吻-cxy_kiss_v3_000002200.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\功能\\\\抠逼-h3_base_fingering_v1.1-6000.safetensors\",\"strength\":0.25},{\"name\":\"MiniMax_H3\\\\功能\\\\阴道修正-SynthPussy_MinimaxH3_v1.safetensors\",\"strength\":0.25}]",
     ""
    ],
    "widgets_values_named": {
-    "lora_stack": "[{\"name\":\"MiniMax_H3\\\\功能\\\\动作逻辑强化-h3_Better_NSFW_Motion_V1.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\功能\\\\解剖优化多参-MysticXXX_MMH3-V5-ref2va.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\加速\\\\TaoMate-HD-preview-comfy.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\加速\\\\taomate_h3_3step_comfy.safetensors\",\"strength\":0.3,\"enabled\":false}]",
+    "lora_stack": "[{\"name\":\"MiniMax_H3\\\\功能\\\\动作逻辑强化-h3_Better_NSFW_Motion_V1.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\功能\\\\解剖优化多参-MysticXXX_MMH3-V5-ref2va.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\加速\\\\TaoMate-HD-preview-comfy.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\功能\\\\舌吻-cxy_kiss_v3_000002200.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\功能\\\\抠逼-h3_base_fingering_v1.1-6000.safetensors\",\"strength\":0.25},{\"name\":\"MiniMax_H3\\\\功能\\\\阴道修正-SynthPussy_MinimaxH3_v1.safetensors\",\"strength\":0.25}]",
     "vanco_loras": ""
    },
    "color": "#223",
@@ -1389,7 +1389,7 @@
    ],
    "size": [
     590,
-    250
+    90
    ],
    "flags": {},
    "order": 5,
@@ -1470,7 +1470,7 @@
    "flags": {
     "collapsed": false
    },
-   "order": 19,
+   "order": 20,
    "mode": 0,
    "inputs": [
     {
@@ -1685,7 +1685,7 @@
    ],
    "size": [
     300,
-    178
+    180
    ],
    "flags": {},
    "order": 9,
@@ -1792,7 +1792,7 @@
    ],
    "size": [
     280,
-    160
+    154
    ],
    "flags": {},
    "order": 10,
@@ -1981,7 +1981,7 @@
    "widgets_values": [
     "每段锚定上段尾帧",
     "微淡化+逐段色彩归一",
-    "1",
+    1,
     "最后一帧",
     true,
     12,
@@ -2009,13 +2009,18 @@
     150
    ],
    "flags": {},
-   "order": 0,
+   "order": 12,
    "mode": 0,
+   "inputs": [],
+   "outputs": [],
    "title": "作者与许可",
    "properties": {},
    "widgets_values": [
     "作者：Vanco\n版本：v1\n许可：GPL-3.0-or-later\n提示词模板：docs/ 里的 v1 与 v2\n安装与使用：见包内「安装说明.md」\n"
    ],
+   "widgets_values_named": {
+    "text": "作者：Vanco\n版本：v1\n许可：GPL-3.0-or-later\n提示词模板：docs/ 里的 v1 与 v2\n安装与使用：见包内「安装说明.md」\n"
+   },
    "color": "#2d2138",
    "bgcolor": "#2d2138"
   }
@@ -2331,10 +2336,10 @@
  "config": {},
  "extra": {
   "ds": {
-   "scale": 0.7341755491825535,
+   "scale": 1.1823970637139967,
    "offset": [
-    567.3170134906824,
-    537.7194791644908
+    -319.2471207593531,
+    -363.5875154596908
    ]
   },
   "frontendVersion": "1.59.1",
