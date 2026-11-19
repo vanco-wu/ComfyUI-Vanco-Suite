@@ -1,9 +1,9 @@
 # 第三方组件与依赖声明
 
-本仓库 `ComfyUI-Vanco-Suite` 的**自有代码**（`__init__.py`、`vanco_studio/`、`vanco_prompt/`、`web/`）
-版权归 Vanco 所有，按 **GPL-3.0-or-later** 发布，全文见仓库根目录 `LICENSE`。
+本仓库 `ComfyUI-Vanco-Suite` 中由 Vanco 编写的代码（`__init__.py`、`vanco_studio/`、`vanco_prompt/`、`web/`）
+采用 **GPL-3.0-or-later**，全文见 `LICENSE`。
 
-本包**不再包含**任何上游插件的源代码副本（2026-11-17 起已全部移除）。以下为**运行时依赖**，
+本包不包含其他插件的源代码副本。以下为**运行时依赖**，
 需由使用者自行安装，各自适用其自身许可证。
 
 ---

@@ -2011,10 +2011,10 @@
    "flags": {},
    "order": 0,
    "mode": 0,
-   "title": "© 作者与许可",
+   "title": "作者与许可",
    "properties": {},
    "widgets_values": [
-    "作者：Vanco\n项目：Vanco 分镜编排引擎 v1\n许可：GPL-3.0-or-later（可自由使用/修改/再分发，须保留本署名与许可）\n提示词模板：v1 / v2（见 docs/）\n本工作流与节点包为原创实现，不含任何第三方插件的源代码副本。\n"
+    "作者：Vanco\n版本：v1\n许可：GPL-3.0-or-later\n提示词模板：docs/ 里的 v1 与 v2\n安装与使用：见包内「安装说明.md」\n"
    ],
    "color": "#2d2138",
    "bgcolor": "#2d2138"
