@@ -1,0 +1,2347 @@
+{
+ "id": "608b4b3e-04b7-4087-b7de-dd7649c915c7",
+ "revision": 0,
+ "last_node_id": 68,
+ "last_link_id": 76,
+ "nodes": [
+  {
+   "id": 6,
+   "type": "VancoAssetGrid",
+   "pos": [
+    110,
+    70
+   ],
+   "size": [
+    330,
+    234
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "inputs": [
+    {
+     "label": "assets_json",
+     "localized_name": "assets_json",
+     "name": "assets_json",
+     "type": "STRING",
+     "widget": {
+      "name": "assets_json"
+     },
+     "link": null
+    },
+    {
+     "label": "缺图处理",
+     "localized_name": "缺图处理",
+     "name": "缺图处理",
+     "type": "COMBO",
+     "widget": {
+      "name": "缺图处理"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "label": "图片批次",
+     "localized_name": "图片批次",
+     "name": "图片批次",
+     "type": "IMAGE",
+     "links": [
+      6
+     ]
+    },
+    {
+     "label": "名字列表",
+     "localized_name": "名字列表",
+     "name": "名字列表",
+     "type": "STRING",
+     "links": [
+      7
+     ]
+    },
+    {
+     "label": "张数",
+     "localized_name": "张数",
+     "name": "张数",
+     "type": "INT",
+     "links": []
+    }
+   ],
+   "title": "★ 素材面板",
+   "properties": {
+    "Node name for S&R": "VancoAssetGrid"
+   },
+   "widgets_values": [
+    "[]",
+    "跳过"
+   ],
+   "widgets_values_named": {
+    "assets_json": "[]",
+    "缺图处理": "跳过",
+    "vanco_assets": "[]"
+   },
+   "color": "#232",
+   "bgcolor": "#353"
+  },
+  {
+   "id": 7,
+   "type": "VancoParamBox",
+   "pos": [
+    110,
+    530
+   ],
+   "size": [
+    400,
+    190
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [
+    {
+     "label": "画幅比例",
+     "localized_name": "画幅比例",
+     "name": "画幅比例",
+     "type": "COMBO",
+     "widget": {
+      "name": "画幅比例"
+     },
+     "link": null
+    },
+    {
+     "label": "百万像素",
+     "localized_name": "百万像素",
+     "name": "百万像素",
+     "type": "FLOAT",
+     "widget": {
+      "name": "百万像素"
+     },
+     "link": null
+    },
+    {
+     "label": "每段秒数",
+     "localized_name": "每段秒数",
+     "name": "每段秒数",
+     "type": "FLOAT",
+     "widget": {
+      "name": "每段秒数"
+     },
+     "link": null
+    },
+    {
+     "label": "对齐倍数",
+     "localized_name": "对齐倍数",
+     "name": "对齐倍数",
+     "type": "INT",
+     "widget": {
+      "name": "对齐倍数"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "label": "宽",
+     "localized_name": "宽",
+     "name": "宽",
+     "type": "INT",
+     "links": [
+      64
+     ]
+    },
+    {
+     "label": "高",
+     "localized_name": "高",
+     "name": "高",
+     "type": "INT",
+     "links": [
+      65
+     ]
+    },
+    {
+     "label": "帧数",
+     "localized_name": "帧数",
+     "name": "帧数",
+     "type": "INT",
+     "links": []
+    },
+    {
+     "label": "秒数",
+     "localized_name": "秒数",
+     "name": "秒数",
+     "type": "FLOAT",
+     "links": [
+      49
+     ]
+    }
+   ],
+   "title": "★ 参数盒",
+   "properties": {
+    "Node name for S&R": "VancoParamBox"
+   },
+   "widgets_values": [
+    "16:9",
+    0.8,
+    6,
+    32
+   ],
+   "widgets_values_named": {
+    "画幅比例": "16:9",
+    "百万像素": 0.8,
+    "每段秒数": 6,
+    "对齐倍数": 32
+   },
+   "color": "#323",
+   "bgcolor": "#434"
+  },
+  {
+   "id": 8,
+   "type": "VancoChainEngine",
+   "pos": [
+    1480,
+    70
+   ],
+   "size": [
+    500,
+    586
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [
+    {
+     "label": "主模型",
+     "localized_name": "主模型",
+     "name": "主模型",
+     "type": "MODEL",
+     "link": 44
+    },
+    {
+     "label": "文本编码器",
+     "localized_name": "文本编码器",
+     "name": "文本编码器",
+     "type": "CLIP",
+     "link": 69
+    },
+    {
+     "label": "视频VAE",
+     "localized_name": "视频VAE",
+     "name": "视频VAE",
+     "type": "VAE",
+     "link": 70
+    },
+    {
+     "label": "音频VAE",
+     "localized_name": "音频VAE",
+     "name": "音频VAE",
+     "type": "VAE",
+     "link": 71
+    },
+    {
+     "label": "素材",
+     "localized_name": "素材",
+     "name": "素材",
+     "shape": 7,
+     "type": "IMAGE",
+     "link": 6
+    },
+    {
+     "label": "名字列表",
+     "localized_name": "名字列表",
+     "name": "名字列表",
+     "shape": 7,
+     "type": "STRING",
+     "link": 7
+    },
+    {
+     "label": "默认秒数",
+     "localized_name": "默认秒数",
+     "name": "默认秒数",
+     "shape": 7,
+     "type": "FLOAT",
+     "link": 49
+    },
+    {
+     "label": "分镜输入",
+     "localized_name": "分镜输入",
+     "name": "分镜输入",
+     "shape": 7,
+     "type": "STRING",
+     "link": 60
+    },
+    {
+     "label": "h3_bundle",
+     "localized_name": "h3_bundle",
+     "name": "h3_bundle",
+     "shape": 7,
+     "type": "MINIMAX_H3_BUNDLE",
+     "link": 67
+    },
+    {
+     "label": "输出设置",
+     "localized_name": "输出设置",
+     "name": "输出设置",
+     "shape": 7,
+     "type": "STRING",
+     "link": 73
+    },
+    {
+     "label": "重跑设置",
+     "localized_name": "重跑设置",
+     "name": "重跑设置",
+     "shape": 7,
+     "type": "STRING",
+     "link": 74
+    },
+    {
+     "label": "质检设置",
+     "localized_name": "质检设置",
+     "name": "质检设置",
+     "shape": 7,
+     "type": "STRING",
+     "link": 75
+    },
+    {
+     "label": "分镜文本",
+     "localized_name": "分镜文本",
+     "name": "分镜文本",
+     "type": "STRING",
+     "widget": {
+      "name": "分镜文本"
+     },
+     "link": null
+    },
+    {
+     "label": "宽",
+     "localized_name": "宽",
+     "name": "宽",
+     "type": "INT",
+     "widget": {
+      "name": "宽"
+     },
+     "link": 64
+    },
+    {
+     "label": "高",
+     "localized_name": "高",
+     "name": "高",
+     "type": "INT",
+     "widget": {
+      "name": "高"
+     },
+     "link": 65
+    },
+    {
+     "label": "步数",
+     "localized_name": "步数",
+     "name": "步数",
+     "type": "INT",
+     "widget": {
+      "name": "步数"
+     },
+     "link": null
+    },
+    {
+     "label": "采样器",
+     "localized_name": "采样器",
+     "name": "采样器",
+     "type": "COMBO",
+     "widget": {
+      "name": "采样器"
+     },
+     "link": null
+    },
+    {
+     "label": "调度器",
+     "localized_name": "调度器",
+     "name": "调度器",
+     "type": "COMBO",
+     "widget": {
+      "name": "调度器"
+     },
+     "link": null
+    },
+    {
+     "label": "种子",
+     "localized_name": "种子",
+     "name": "种子",
+     "type": "INT",
+     "widget": {
+      "name": "种子"
+     },
+     "link": null
+    },
+    {
+     "label": "开二采",
+     "localized_name": "开二采",
+     "name": "开二采",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "开二采"
+     },
+     "link": null
+    },
+    {
+     "label": "二采模型",
+     "localized_name": "二采模型",
+     "name": "二采模型",
+     "type": "COMBO",
+     "widget": {
+      "name": "二采模型"
+     },
+     "link": null
+    },
+    {
+     "label": "二采倍数",
+     "localized_name": "二采倍数",
+     "name": "二采倍数",
+     "type": "FLOAT",
+     "widget": {
+      "name": "二采倍数"
+     },
+     "link": null
+    },
+    {
+     "label": "二采步数",
+     "localized_name": "二采步数",
+     "name": "二采步数",
+     "type": "INT",
+     "widget": {
+      "name": "二采步数"
+     },
+     "link": null
+    },
+    {
+     "label": "二采降噪",
+     "localized_name": "二采降噪",
+     "name": "二采降噪",
+     "type": "FLOAT",
+     "widget": {
+      "name": "二采降噪"
+     },
+     "link": null
+    },
+    {
+     "label": "参考尺寸",
+     "localized_name": "参考尺寸",
+     "name": "参考尺寸",
+     "type": "COMBO",
+     "widget": {
+      "name": "参考尺寸"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "label": "合并帧",
+     "localized_name": "合并帧",
+     "name": "合并帧",
+     "type": "IMAGE",
+     "links": [
+      10
+     ]
+    },
+    {
+     "label": "音频",
+     "localized_name": "音频",
+     "name": "音频",
+     "type": "AUDIO",
+     "links": [
+      11
+     ]
+    },
+    {
+     "label": "段数",
+     "localized_name": "段数",
+     "name": "段数",
+     "type": "INT",
+     "links": []
+    },
+    {
+     "label": "分段清单",
+     "localized_name": "分段清单",
+     "name": "分段清单",
+     "type": "STRING",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VancoChainEngine"
+   },
+   "widgets_values": [
+    "",
+    992,
+    544,
+    3,
+    "euler",
+    "simple",
+    134471990688956,
+    "randomize",
+    false,
+    "minimax_h3_latent_upscaler_3d_bf16.safetensors",
+    1.5,
+    2,
+    0.3,
+    true,
+    "max",
+    "未命名剧本",
+    "Vanco导演台测试专用文件夹",
+    false,
+    "卸载模型+清缓存",
+    0,
+    false,
+    "停下提醒",
+    "级联重跑",
+    "首尾帧",
+    "微淡化+逐段色彩归一",
+    "1",
+    "每段锚定上段尾帧",
+    "最后一帧",
+    true,
+    12,
+    true,
+    true,
+    ""
+   ],
+   "widgets_values_named": {
+    "分镜文本": "",
+    "宽": 992,
+    "高": 544,
+    "步数": 3,
+    "采样器": "euler",
+    "调度器": "simple",
+    "种子": 134471990688956,
+    "control_after_generate": "randomize",
+    "开二采": false,
+    "二采模型": "minimax_h3_latent_upscaler_3d_bf16.safetensors",
+    "二采倍数": 1.5,
+    "二采步数": 2,
+    "二采降噪": 0.3,
+    "保存分段": true,
+    "参考尺寸": "max",
+    "引擎也存成片": false,
+    "剧本名": "Vanco导演台测试专用文件夹",
+    "省内存模式": false,
+    "段间清理": "卸载模型+清缓存",
+    "只跑第N段": 0,
+    "重跑后交给画布": false,
+    "上游已变时": "停下提醒",
+    "下游处理": "级联重跑",
+    "精确重跑": "首尾帧",
+    "接缝处理": "微淡化+逐段色彩归一",
+    "参考尾帧数": "1",
+    "硬接模式": "每段锚定上段尾帧",
+    "尾帧取样": "最后一帧",
+    "人物检测": true,
+    "检测帧数": 12,
+    "自动裁空镜": true,
+    "成片只存画布": true,
+    "vanco_slim_hint": ""
+   },
+   "color": "#2b2b2f",
+   "bgcolor": "#3a3a40"
+  },
+  {
+   "id": 9,
+   "type": "CreateVideo",
+   "pos": [
+    2040,
+    70
+   ],
+   "size": [
+    300,
+    180
+   ],
+   "flags": {},
+   "order": 14,
+   "mode": 0,
+   "inputs": [
+    {
+     "label": "images",
+     "localized_name": "图像",
+     "name": "images",
+     "type": "IMAGE",
+     "link": 10
+    },
+    {
+     "label": "audio",
+     "localized_name": "音频",
+     "name": "audio",
+     "shape": 7,
+     "type": "AUDIO",
+     "link": 11
+    },
+    {
+     "label": "fps",
+     "localized_name": "帧率",
+     "name": "fps",
+     "type": "FLOAT",
+     "widget": {
+      "name": "fps"
+     },
+     "link": null
+    },
+    {
+     "label": "bit_depth",
+     "localized_name": "bit_depth",
+     "name": "bit_depth",
+     "shape": 7,
+     "type": "COMBO",
+     "widget": {
+      "name": "bit_depth"
+     },
+     "link": null
+    },
+    {
+     "label": "color_space",
+     "localized_name": "color_space",
+     "name": "color_space",
+     "shape": 7,
+     "type": "COMBO",
+     "widget": {
+      "name": "color_space"
+     },
+     "link": null
+    },
+    {
+     "label": "chroma_subsampling",
+     "localized_name": "chroma_subsampling",
+     "name": "chroma_subsampling",
+     "shape": 7,
+     "type": "COMBO",
+     "widget": {
+      "name": "chroma_subsampling"
+     },
+     "link": null
+    },
+    {
+     "label": "codec",
+     "localized_name": "codec",
+     "name": "codec",
+     "shape": 7,
+     "type": "COMBO",
+     "widget": {
+      "name": "codec"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "label": "VIDEO",
+     "localized_name": "视频",
+     "name": "VIDEO",
+     "type": "VIDEO",
+     "links": [
+      12,
+      14,
+      40
+     ]
+    }
+   ],
+   "title": "合成视频",
+   "properties": {
+    "Node name for S&R": "CreateVideo"
+   },
+   "widgets_values": [
+    24,
+    "auto",
+    "sRGB",
+    "auto",
+    "none"
+   ],
+   "widgets_values_named": {
+    "fps": 24,
+    "bit_depth": "auto",
+    "color_space": "sRGB",
+    "chroma_subsampling": "auto",
+    "codec": "none"
+   },
+   "color": "#234",
+   "bgcolor": "#345"
+  },
+  {
+   "id": 12,
+   "type": "SaveVideo",
+   "pos": [
+    2040,
+    300
+   ],
+   "size": [
+    340,
+    546.8
+   ],
+   "flags": {},
+   "order": 16,
+   "mode": 0,
+   "inputs": [
+    {
+     "label": "video",
+     "localized_name": "视频",
+     "name": "video",
+     "type": "VIDEO",
+     "link": 14
+    },
+    {
+     "label": "filename_prefix",
+     "localized_name": "文件名前缀",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    },
+    {
+     "label": "format",
+     "localized_name": "格式",
+     "name": "format",
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "format"
+     },
+     "link": null
+    },
+    {
+     "label": "format.codec",
+     "localized_name": "编解码器",
+     "name": "format.codec",
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "format.codec"
+     },
+     "link": null
+    },
+    {
+     "label": "codec",
+     "localized_name": "编码器",
+     "name": "codec",
+     "shape": 7,
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "codec"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "label": "video",
+     "localized_name": "video",
+     "name": "video",
+     "type": "VIDEO",
+     "links": [
+      66
+     ]
+    }
+   ],
+   "title": "★ 原始成片（必存）",
+   "properties": {
+    "Node name for S&R": "SaveVideo"
+   },
+   "widgets_values": [
+    "视频合集/Vanco/多段导演台/Vanco导演台测试专用文件夹/成片/MiniMax_H3-多段导演台-%date:yyyyMMddhhmmss%",
+    "auto",
+    "auto",
+    "auto"
+   ],
+   "widgets_values_named": {
+    "filename_prefix": "视频合集/Vanco/多段导演台/Vanco导演台测试专用文件夹/成片/MiniMax_H3-多段导演台-%date:yyyyMMddhhmmss%",
+    "format": "auto",
+    "format.codec": "auto",
+    "codec": "auto"
+   },
+   "color": "#2a4",
+   "bgcolor": "#3b5"
+  },
+  {
+   "id": 11,
+   "type": "VancoSR",
+   "pos": [
+    2940,
+    70
+   ],
+   "size": [
+    370,
+    250
+   ],
+   "flags": {},
+   "order": 15,
+   "mode": 4,
+   "inputs": [
+    {
+     "label": "视频",
+     "localized_name": "视频",
+     "name": "视频",
+     "type": "VIDEO",
+     "link": 12
+    },
+    {
+     "label": "启用超分",
+     "localized_name": "启用超分",
+     "name": "启用超分",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "启用超分"
+     },
+     "link": null
+    },
+    {
+     "label": "超分模型",
+     "localized_name": "超分模型",
+     "name": "超分模型",
+     "type": "COMBO",
+     "widget": {
+      "name": "超分模型"
+     },
+     "link": null
+    },
+    {
+     "label": "倍数",
+     "localized_name": "倍数",
+     "name": "倍数",
+     "type": "FLOAT",
+     "widget": {
+      "name": "倍数"
+     },
+     "link": null
+    },
+    {
+     "label": "对色",
+     "localized_name": "对色",
+     "name": "对色",
+     "type": "COMBO",
+     "widget": {
+      "name": "对色"
+     },
+     "link": null
+    },
+    {
+     "label": "解码器",
+     "localized_name": "解码器",
+     "name": "解码器",
+     "type": "COMBO",
+     "widget": {
+      "name": "解码器"
+     },
+     "link": null
+    },
+    {
+     "label": "内核",
+     "localized_name": "内核",
+     "name": "内核",
+     "type": "COMBO",
+     "widget": {
+      "name": "内核"
+     },
+     "link": null
+    },
+    {
+     "label": "省显存",
+     "localized_name": "省显存",
+     "name": "省显存",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "省显存"
+     },
+     "link": null
+    },
+    {
+     "label": "编码器",
+     "localized_name": "编码器",
+     "name": "编码器",
+     "type": "COMBO",
+     "widget": {
+      "name": "编码器"
+     },
+     "link": null
+    },
+    {
+     "label": "种子",
+     "localized_name": "种子",
+     "name": "种子",
+     "type": "INT",
+     "widget": {
+      "name": "种子"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "label": "视频",
+     "localized_name": "视频",
+     "name": "视频",
+     "type": "VIDEO",
+     "links": [
+      13
+     ]
+    }
+   ],
+   "title": "★ 超分（可 Ctrl+B 旁路）",
+   "properties": {
+    "Node name for S&R": "VancoSR"
+   },
+   "widgets_values": [
+    true,
+    "transformer_int8_convrot.safetensors",
+    2,
+    "adain",
+    "flashdecoder",
+    "fast",
+    false,
+    "auto",
+    1
+   ],
+   "widgets_values_named": {
+    "启用超分": true,
+    "超分模型": "transformer_int8_convrot.safetensors",
+    "倍数": 2,
+    "对色": "adain",
+    "解码器": "flashdecoder",
+    "内核": "fast",
+    "省显存": false,
+    "编码器": "auto",
+    "种子": 1
+   },
+   "color": "#246",
+   "bgcolor": "#357"
+  },
+  {
+   "id": 10,
+   "type": "SaveVideo",
+   "pos": [
+    2950,
+    370
+   ],
+   "size": [
+    360,
+    370
+   ],
+   "flags": {},
+   "order": 18,
+   "mode": 4,
+   "inputs": [
+    {
+     "label": "video",
+     "localized_name": "视频",
+     "name": "video",
+     "type": "VIDEO",
+     "link": 13
+    },
+    {
+     "label": "filename_prefix",
+     "localized_name": "文件名前缀",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    },
+    {
+     "label": "format",
+     "localized_name": "格式",
+     "name": "format",
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "format"
+     },
+     "link": null
+    },
+    {
+     "label": "format.codec",
+     "localized_name": "编解码器",
+     "name": "format.codec",
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "format.codec"
+     },
+     "link": null
+    },
+    {
+     "label": "codec",
+     "localized_name": "编码器",
+     "name": "codec",
+     "shape": 7,
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "codec"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "label": "video",
+     "localized_name": "video",
+     "name": "video",
+     "type": "VIDEO",
+     "links": null
+    }
+   ],
+   "title": "★ 超分成片（开关关时不存）",
+   "properties": {
+    "Node name for S&R": "SaveVideo"
+   },
+   "widgets_values": [
+    "视频合集/超分/ReCaVSR-%date:yyyyMMddhhmmss%",
+    "auto",
+    "auto",
+    "auto"
+   ],
+   "widgets_values_named": {
+    "filename_prefix": "视频合集/超分/ReCaVSR-%date:yyyyMMddhhmmss%",
+    "format": "auto",
+    "format.codec": "auto",
+    "codec": "auto"
+   },
+   "color": "#234",
+   "bgcolor": "#345"
+  },
+  {
+   "id": 40,
+   "type": "VancoRelaySR",
+   "pos": [
+    2440,
+    70
+   ],
+   "size": [
+    420,
+    178
+   ],
+   "flags": {},
+   "order": 17,
+   "mode": 4,
+   "inputs": [
+    {
+     "label": "视频",
+     "localized_name": "视频",
+     "name": "视频",
+     "type": "VIDEO",
+     "link": 40
+    },
+    {
+     "label": "启用",
+     "localized_name": "启用",
+     "name": "启用",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "启用"
+     },
+     "link": null
+    },
+    {
+     "label": "主模型",
+     "localized_name": "主模型",
+     "name": "主模型",
+     "type": "COMBO",
+     "widget": {
+      "name": "主模型"
+     },
+     "link": null
+    },
+    {
+     "label": "解码VAE",
+     "localized_name": "解码VAE",
+     "name": "解码VAE",
+     "type": "COMBO",
+     "widget": {
+      "name": "解码VAE"
+     },
+     "link": null
+    },
+    {
+     "label": "Detail",
+     "localized_name": "Detail",
+     "name": "Detail",
+     "type": "FLOAT",
+     "widget": {
+      "name": "Detail"
+     },
+     "link": null
+    },
+    {
+     "label": "种子",
+     "localized_name": "种子",
+     "name": "种子",
+     "type": "INT",
+     "widget": {
+      "name": "种子"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "label": "视频",
+     "localized_name": "视频",
+     "name": "视频",
+     "type": "VIDEO",
+     "links": [
+      41
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VancoRelaySR"
+   },
+   "widgets_values": [
+    false,
+    true,
+    "relayvsr_flash_vae_x2_fp32.safetensors",
+    0.8,
+    123456789,
+    "fixed"
+   ],
+   "widgets_values_named": {
+    "启用": false,
+    "主模型": true,
+    "解码VAE": "relayvsr_flash_vae_x2_fp32.safetensors",
+    "Detail": 0.8,
+    "种子": 123456789,
+    "control_after_generate": "fixed"
+   },
+   "color": "#a35",
+   "bgcolor": "#b46"
+  },
+  {
+   "id": 41,
+   "type": "SaveVideo",
+   "pos": [
+    2440,
+    300
+   ],
+   "size": [
+    420,
+    440
+   ],
+   "flags": {},
+   "order": 20,
+   "mode": 4,
+   "inputs": [
+    {
+     "label": "video",
+     "localized_name": "视频",
+     "name": "video",
+     "type": "VIDEO",
+     "link": 41
+    },
+    {
+     "label": "filename_prefix",
+     "localized_name": "文件名前缀",
+     "name": "filename_prefix",
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    },
+    {
+     "label": "format",
+     "localized_name": "格式",
+     "name": "format",
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "format"
+     },
+     "link": null
+    },
+    {
+     "label": "format.codec",
+     "localized_name": "编解码器",
+     "name": "format.codec",
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "format.codec"
+     },
+     "link": null
+    },
+    {
+     "label": "codec",
+     "localized_name": "编码器",
+     "name": "codec",
+     "shape": 7,
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "codec"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "label": "video",
+     "localized_name": "video",
+     "name": "video",
+     "type": "VIDEO",
+     "links": null
+    }
+   ],
+   "title": "★ Relay 超分成片",
+   "properties": {
+    "Node name for S&R": "SaveVideo"
+   },
+   "widgets_values": [
+    "视频合集/超分/RelayVSR-%date:yyyyMMddhhmmss%",
+    "auto",
+    "auto",
+    "auto"
+   ],
+   "widgets_values_named": {
+    "filename_prefix": "视频合集/超分/RelayVSR-%date:yyyyMMddhhmmss%",
+    "format": "auto",
+    "format.codec": "auto",
+    "codec": "auto"
+   },
+   "color": "#a35",
+   "bgcolor": "#b46"
+  },
+  {
+   "id": 51,
+   "type": "VancoH3LoraLoader",
+   "pos": [
+    550,
+    460
+   ],
+   "size": [
+    560,
+    244
+   ],
+   "flags": {},
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "label": "model",
+     "localized_name": "model",
+     "name": "model",
+     "shape": 7,
+     "type": "MODEL",
+     "link": 68
+    },
+    {
+     "label": "clip",
+     "localized_name": "clip",
+     "name": "clip",
+     "shape": 7,
+     "type": "CLIP",
+     "link": null
+    },
+    {
+     "label": "bundle",
+     "localized_name": "bundle",
+     "name": "bundle",
+     "shape": 7,
+     "type": "MINIMAX_H3_BUNDLE",
+     "link": 72
+    }
+   ],
+   "outputs": [
+    {
+     "label": "model",
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "links": [
+      44
+     ]
+    },
+    {
+     "label": "clip",
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "links": []
+    },
+    {
+     "label": "h3_bundle",
+     "localized_name": "h3_bundle",
+     "name": "h3_bundle",
+     "type": "MINIMAX_H3_BUNDLE",
+     "links": [
+      67
+     ]
+    }
+   ],
+   "title": "② LoRA 加载器",
+   "properties": {
+    "Node name for S&R": "VancoH3LoraLoader",
+    "vancoDisabled": {
+     "4": "MiniMax_H3\\加速\\pika_h3_flex_turbo_4step_ref2va.safetensors"
+    }
+   },
+   "widgets_values": [
+    "[{\"name\":\"MiniMax_H3\\\\功能\\\\动作逻辑强化-h3_Better_NSFW_Motion_V1.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\功能\\\\解剖优化多参-MysticXXX_MMH3-V5-ref2va.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\加速\\\\TaoMate-HD-preview-comfy.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\加速\\\\taomate_h3_3step_comfy.safetensors\",\"strength\":0.3,\"enabled\":false}]",
+    ""
+   ],
+   "widgets_values_named": {
+    "lora_stack": "[{\"name\":\"MiniMax_H3\\\\功能\\\\动作逻辑强化-h3_Better_NSFW_Motion_V1.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\功能\\\\解剖优化多参-MysticXXX_MMH3-V5-ref2va.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\加速\\\\TaoMate-HD-preview-comfy.safetensors\",\"strength\":0.3,\"enabled\":true},{\"name\":\"MiniMax_H3\\\\加速\\\\taomate_h3_3step_comfy.safetensors\",\"strength\":0.3,\"enabled\":false}]",
+    "vanco_loras": ""
+   },
+   "color": "#223",
+   "bgcolor": "#334"
+  },
+  {
+   "id": 52,
+   "type": "Note",
+   "pos": [
+    -760,
+    110
+   ],
+   "size": [
+    470,
+    290
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "title": "📄 提示词模板（v2）",
+   "properties": {},
+   "widgets_values": [
+    "# 提示词模板 · Vanco 分镜编排引擎\n\n> **模板版本 v2**（2026-11-18）：在 v1 全部硬规则基础上，改成**高密度写法**——\n> 主体卡加「声音设定」与「材质细节」，场景段加「布光三要素」，每个 shot 必须写机位角度 + 景别 + 秒数。\n> 目标密度：**每 10 秒 ≈ 1500–2000 字**（v1 约 600–1000 字）。\n\n> 给写剧本的智能体用。读完你应该能直接产出**可以粘进「分段引擎」的整篇分镜**。\n> 结构：**怎么用** → **头行格式** → **素材与角色卡** → **正文结构（高密度）** → **写作规则** → **自检清单** → **成品示例** → **失败修法**。\n\n---\n\n## 〇、怎么用（先读这段）\n\n1. 你是一名分镜师 + 提示词工程师。用户给你剧情，你拆成若干**镜头块**，每块对应一次生成（4–10 秒）。\n2. **输出纯文本**：只有镜头块，不要解释、不要前言、不要 markdown 标题。\n3. 每块 = **一行头 + 六段式正文**，块之间空一行。\n4. 动手前先问清四件事（没给就用占位名并在最后提示）：\n   - **素材顺序**：第几张是场景、第几张是谁（序号必须准确）\n   - **出片比例**：竖屏 / 横屏（决定角色卡比例）\n   - **总时长**：决定拆几段\n   - **每个角色的声音**：年龄性别、音高、语速、口音、说话习惯\n\n---\n\n## 一、头行格式（必须遵守）\n\n```\n[1] 续接=新图:1 角色=男主,女主 图=1,2,3 秒=8\n[2] 续接=上一段 角色=男主,女主 图=2,3 秒=8\n[3] 续接=新图:4 角色=女主 图=4,5 秒=6\n```\n\n| 字段 | 取值 | 说明 |\n|---|---|---|\n| `图` | `图=2,3,5`（**必填**） | 本段只用这几张素材，顺序即参考顺序。不写=喂全部（上限 8 张，易串人） |\n| `续接` | `新图:N` / `新图:名字` / `上一段` | 唯一决定起幅图。名字写错**不报错**，会静默用第 1 张 |\n| `角色` | `男主,女主`（**逗号后不能有空格**） | 引擎按数量核对画面人数 |\n| `秒` | 4–10 的整数 | 引擎换算帧数并对齐 17k+5 网格 |\n\n### ⚠️ 三条硬规则\n\n1. **一条链最多 3 段**（连续 `续接=上一段` 的段数）。实测第 4 段起：亮度掉一半、饱和涨 60%、皮肤出橙红斑块。\n2. **断链处必须换机位或景别**，否则看起来像\"卡了一下\"而不是切镜头。\n3. **接力是参考，不是硬接**：`续接=上一段` 会把上段尾帧当参考图，构图/景别/姿态仍可能重新生成。要锁构图用 `硬接模式`。\n\n### 图号怎么编\n\n```\n新图:2 + 图=2,3,4  →  <Picture 1>=素材2（起幅） <Picture 2>=素材3 <Picture 3>=素材4\n上一段 + 图=3,4    →  <Picture 1>=上一段尾帧  <Picture 2>=素材3 <Picture 3>=素材4\n```\n\n**`<Picture 1>` 永远是本段起幅图**，其余按 `图=` 顺序往后。写正文前必须按这个换算。\n\n---\n\n## 二、素材与角色卡（决定像不像）\n\n### 角色卡的要求\n\n| 项 | 要求 |\n|---|---|\n| **比例** | 和出片比例一致（竖屏出片就做竖卡） |\n| **尺寸** | ≥ 1024×1024（竖版 896×1152 起） |\n| **脸占比** | **30–40%**（缩放后脸部像素量决定像不像） |\n| **内容** | 大头特写 + 正/侧/背三视图 |\n| **质量** | 正面、平光、无遮挡、表情中性、**不要美颜磨皮** |\n\n> 决定\"像不像\"的是**缩放后脸还剩多少像素**：\n> `脸像素 ≈ 卡宽 × 脸占比`。1024 的卡 + 35% 脸占比，`match` 就有约 230px 的脸。\n\n### 素材与编号\n\n素材面板按顺序编号 1、2、3…（**改面板顺序，剧本的 `图=` 要跟着改**）。\n每个角色只用一张卡（含脸 + 三视图），不要拆成\"纯脸\"+ \"纯身体\"两张——模型会当成两个人。\n\n---\n\n## 三、正文结构（六段式，高密度版）\n\n```\nsubject_definitions:\n<Subject 1> is the exact frame in <Picture 1>: 场景 + 布光三要素 + 材质反应。\n<Subject 2> is the man in <Picture 2>. Face: exact facial features, face shape, hairstyle,\n  hair colour, skin tone, body proportions. Clothing: exact style, colour, fabric, fit,\n  accessories. Voice: 年龄性别、音高、语速、口音、说话习惯、情绪时的变化。\n\nsummary:\n[reference generation] 一句话：这段发生什么。不要塞细节。\n\nretention_analysis:\n<Subject 1> (frame 1): fully_preserved - same room, same light direction, same furniture layout.\n<Subject 2> (throughout): fully_preserved - exact face, hair, clothing.\n<Subject 3> (throughout): fully_preserved.\n\nSTAGING:\n谁在画面左、谁在右、谁坐谁站、谁朝向哪、摄像机在哪一侧。\nNobody changes seat, nobody crosses the line, no fourth person appears.\n\ndetailed_description:\n第一句写死：机位高度 + 景别 + 构图 + 光位方向 + 景深。\n[Shot 1] At 00:00.000, 机位/景别/时长 1s，一个动作 + 微表情 + 呼吸。\n[Shot 2] At 00:02.000, 机位变化/景别/时长 2s，下一个动作。\n[Shot 3] At 00:04.000, <Subject 2> (S1) says quietly: \"…\"，收小动作。\n\noverall_soundscape:\n物理声源：Room tone, fabric rustle, one short breath...\n末尾固定：All faces stay fully inside the frame. No on-screen text, no captions, no subtitles.\n\nnon_diegetic_music:\nN/A\n```\n\n**正文用英文写**（模型对英文最稳）。中文只出现在台词里。\n\n---\n\n## 四、高密度写法（v2 的重点）\n\n### 1. 主体卡要写四层\n\n| 层 | 写什么 | 例 |\n|---|---|---|\n| **脸** | 五官、脸型、发际线、肤色、瑕疵 | `oval face, high cheekbones, faint mole under left eye` |\n| **发型** | 长度、分缝、发色、质感 | `black hair in a loose low bun, strands loose at temples` |\n| **服装** | 款式、颜色、**面料**、版型、配饰 | `off-white cotton shirt, slightly wrinkled, sleeves rolled to elbow` |\n| **声音** | 年龄性别、音高、语速、口音、习惯 | `female, 25–30, mid-low pitch, fast pace, faint southern accent, ends sentences rising` |\n\n> **外貌不写颜色词是 v1 的规则，v2 修正**：颜色可以写，但必须写\"和参考图一致\"为前提——\n> `hair colour exactly as in <Picture 2>` 比 `purple hair` 稳。\n\n### 2. 场景段要写布光三要素\n\n```\n光位：window light from frame left, 45 degrees down\n色温：warm late-afternoon light, slight amber cast\n强度：soft, no harsh shadows on faces\n```\n\n再补一句**材质反应**（决定\"贵不贵\"）：\n\n```\nmatte concrete wall, thin reflection on the glass table, dust visible in the light beam\n```\n\n### 3. 每个 shot 三件套\n\n```\n[Shot 2] At 00:02.000, 机位(平视/低角度/过肩) · 景别(中景/近景) · 时长 2s\n         动作 + 微表情 + 呼吸 + 视线\n```\n\n- **机位**：`eye-level` / `low angle` / `over-shoulder` / `side profile`\n- **景别**：`wide` / `medium` / `medium close-up` / `close-up`\n- **时长**：每拍 1.5–2.5 秒\n\n### 4. 密度目标\n\n| 段长 | 正文目标字数 |\n|---|---|\n| 4 秒 | 600–800 |\n| 6 秒 | 900–1200 |\n| 8 秒 | 1200–1600 |\n| 10 秒 | **1500–2000** |\n\n**写不到下限 = 模型自由发挥 = 画面飘。** 但不要凑字：多写\"光、材质、微表情、呼吸\"，不要堆形容词。\n\n---\n\n## 五、写作规则（v1 全部保留 + v2 补充）\n\n1. **一拍一件事**：4 秒 2 拍 / 6 秒 3 拍 / 8 秒 4 拍 / 10 秒 5 拍 / 12 秒 6 拍。少于「秒数÷3」就开始自己加戏。\n2. **构图先写**：第一句必须写死机位和景别，不要用 `cinematic shot` 这种空话开头——空话开头 = 空镜。\n3. **脸必须在框内**：每段结尾加 `All faces stay fully inside the frame`。\n4. **不越轴**：全片固定方位，每段在 STAGING 复述，不能只写第一段。\n5. **身份要写足**：只写 `is <Picture 2>` 会让两个同性角色越长越像。\n6. **多人同框 ≤ 3 人**，第三人必须被动（躺着、旁观）。\n7. **禁写极端特写**：退到中近景，画面里至少留一张脸。\n8. **台词内联**，两种格式都验过：\n   - 默认：`<Subject 2> says quietly: \"…\"`\n   - 念稿/字幕异常时改：`<Subject 2> says: <d>[Chinese] …</d>`\n9. **状态要复述**：每段开头说明\"他正躺着/她外套已脱\"——段与段之间没有记忆。\n10. **别让角色自己站起来**：除非剧情要求，写死姿势。\n11. **台词短**：一句 6–12 字，超过 15 字容易念糊。\n12. **结尾收小**：最后一拍做收尾小动作（收手、停住、转头、闭眼）。\n13. **说话人编号**：多人同框写 `(S1)`，按本段开口顺序。不写 = 口型给错人。\n14. **道具做主语 + 被动语态**：`the gun is forced back, still held in her hand`。一句只写一个道具。\n15. **音效只写物理声源**：不要写 `voices`。写成 `fabric rustle, wet contact, quiet room tone`。\n16. **【v2 新增】每段必须有\"人已经在画面里\"的表述**：避免开头 0.3–0.5 秒空镜。\n17. **【v2 新增】情绪写\"表现\"不写\"感受\"**：写 `her jaw tightens, one quick breath`，不写 `she is nervous`。\n18. **【v2 新增】禁止在一句里要求两件事**：一句只给一个动作或一个状态。\n\n### 景别词表\n\n`extreme close-up` 大特写 / `close-up` 特写 / `medium close-up` 近景 / `medium shot` 中景 /\n`medium wide shot` 中远景 / `wide shot` 全景\n\n---\n\n## 六、交付前自检清单\n\n- [ ] 每块头行四字段齐全，**用 `=` 不用 `:`**\n- [ ] `角色=` 里逗号后**没有空格**\n- [ ] `续接` 只有 `新图:N` / `新图:名字` / `上一段`\n- [ ] `图=` 序号与素材顺序一致\n- [ ] **每条链 ≤ 3 段**\n- [ ] 断链处换了机位或景别\n- [ ] 六段齐全（subject_definitions / summary / retention_analysis / STAGING / detailed_description / overall_soundscape）\n- [ ] 主体卡写了**脸 + 发型 + 服装面料 + 声音**\n- [ ] 场景段写了**光位 + 色温 + 强度 + 材质**\n- [ ] 每个 shot 有**机位 + 景别 + 秒数**\n- [ ] 字数达到该段长下限（10 秒 ≥1500 字）\n- [ ] 每块都有 `All faces stay fully inside the frame`\n- [ ] 正文零中文（中文只在台词里）\n- [ ] 没有台词就写 `No dialogue, no speech, no narration`\n- [ ] `overall_soundscape` 末尾有 `No on-screen text, no captions, no subtitles.`\n\n---\n\n## 七、成品示例（照这个密度写）\n\n```\n[1] 续接=新图:1 角色=女主,男主 图=1,2,3 秒=8\nsubject_definitions:\n<Subject 1> is the exact frame in <Picture 1>: a small living room, camera at seated eye level,\nfacing the sofa. Window light from frame left, 45 degrees down, warm late-afternoon tone,\nsoft with no harsh shadows on faces. Matte painted wall, thin reflection on the glass coffee table,\ndust faintly visible in the light beam.\n<Subject 2> is the woman in <Picture 2>. Face: exact facial features, oval face, high cheekbones,\nslight bruise under the right eye, pale skin. Hair: black, loose low bun, strands at the temples.\nClothing: oversized off-white cotton shirt, sleeves rolled to the elbow, thin silver necklace.\nVoice: female, 25–30, mid-low pitch, fast pace, faint southern accent, ends sentences rising.\n<Subject 3> is the man in <Picture 3>. Face: exact facial features, sharp jaw, thin stubble,\nwarm tan skin. Hair: short black, messy fringe. Clothing: dark grey knit sweater, sleeves pushed up,\nblack watch on the left wrist. Voice: male, 30–35, low pitch, slow pace, flat tone, rarely raises volume.\nsummary:\n[reference generation] The two of them sit on the sofa, she leans on his shoulder, then says one line.\nretention_analysis:\n<Subject 1> (frame 1): fully_preserved - same room, same sofa, same window light direction.\n<Subject 2> (throughout): fully_preserved - exact face, hair, shirt.\n<Subject 3> (throughout): fully_preserved - exact face, hair, sweater.\nSTAGING:\nThe woman sits on the left half of the sofa, the man on the right, both in three-quarter view,\nboth already in frame at 00:00.000. The camera stays on the window side. Nobody stands up,\nnobody leaves, no third person appears.\ndetailed_description:\nMedium shot at seated eye level, the sofa across the lower half of the frame, window light from\nframe left, shallow depth of field, background soft.\n[Shot 1] At 00:00.000, eye-level medium shot, 2s. The woman is already leaning her head on the\nman's shoulder; her eyes half closed, one slow breath, her hand resting on his forearm.\n[Shot 2] At 00:02.000, slight push to medium close-up, 2s. The man turns his head toward her,\njaw tightens slightly, one quick breath, his thumb moves on her wrist.\n[Shot 3] At 00:04.000, back to eye-level medium shot, 2s. The woman (S1) lifts her head a little\nand says quietly: \"别问了。\"\n[Shot 4] At 00:06.000, medium close-up on both faces, 2s. She settles her cheek back on his\nshoulder, eyes close, both stop moving. All faces stay fully inside the frame.\noverall_soundscape:\nRoom tone, fabric rustle against the sofa, one short breath, faint street noise outside.\nNo on-screen text, no captions, no subtitles.\nnon_diegetic_music:\nN/A\n```\n\n---\n\n## 八、常见失败与修法\n\n| 现象 | 成因 | 修法 |\n|---|---|---|\n| 角色念旁白似的乱语 | 正文里有中文人名 | 正文零中文，角色用 `<Subject n>` |\n| 画面出现字幕 | 提示词带引号文字 | 没台词就不写引号，并加 `No captions / no subtitles` |\n| 开头 0.3 秒空镜 | 第一句是空话 | 第一句写机位 + 景别 + 主体位置，并写\"already in frame\" |\n| 人物越拍越像 | 只写 `is <Picture n>` | 补脸型/发型/服装面料 |\n| 脸不像 | 角色卡脸占比太小 | 重做卡：脸占 30–40%，尺寸 ≥1024 |\n| 画面\"廉价\" | 没写材质和布光 | 补：光位 / 色温 / 材质反光 |\n| 语言乱、念稿 | 正文太短，中文太多 | 补到字数下限，正文全英文 |\n| 说话的人不动嘴 | 没标 `(Sx)` | 写 `<Subject 2> (S1) says: \"…\"` |\n| 接缝顿一下 | 上段在大幅动作中结束 | 最后一拍收小 |\n| 动作粘连/多手多脚 | 一段里两人同时主动 | 拆段，或让一人被动 |\n| 眼神空洞 | 没写视线 | 每个 shot 写 `looking at frame left / at his face` |\n\n---\n\n## 九、版本说明\n\n| 版本 | 变化 |\n|---|---|\n| v1（2026-11-17） | 六段式基础 + `图=` + 链长≤3 + 说话人编号 + 音效只写物理声源 |\n| **v2（2026-11-18）** | **高密度写法**：主体卡四层（脸/发型/服装面料/声音）、场景布光三要素、每 shot 机位+景别+秒数、字数下限表、v2 新增 3 条规则 |\n"
+   ],
+   "widgets_values_named": {
+    "text": "# 提示词模板 · Vanco 分镜编排引擎（自建工作流专用）\n\n> **模板版本 v1**（2026-11-17，新名字首版）：`图=` 改为每段必填（不写会喂全部素材，极易串人）；新增道具写法硬规则、外貌不写颜色词、接力是参考不是硬接的说明。\n\n> 给写剧本的智能体用。读完你应该能直接产出**可以粘进「分段引擎」的整篇分镜**。\n> 分四块：**怎么用** → **格式规则**（违反会出错） → **写作规则**（踩坑总结） → **成品示例**。\n\n---\n\n## 〇、怎么用（先读这段）\n\n1. 你是一名分镜师。用户给你一段剧情，你把它拆成若干**镜头块**，每块对应一次生成（4–10 秒）。\n2. **输出必须是纯文本，只包含镜头块**：不要解释、不要前言、不要 markdown 标题、不要编号列表。\n3. 每块 = **一行头 + 六段式正文**，块之间空一行。用户会整段粘进引擎的文本框。\n4. 先问清楚两个信息（没给就用占位名并在最后提示）：\n   - **素材名**：场景图叫什么、角色图叫什么（必须逐字使用）\n   - **总时长**：想做多长，决定拆几段\n\n---\n\n## 一、分镜块格式（本工作流专用，必须遵守）\n\n```\n[1] 续接=新图:1 角色=角色A,角色B 图=1,2,3 秒=8\n（六段式正文）\n\n[2] 续接=上一段 角色=角色A,角色B 秒=8\n（六段式正文）\n\n[3] 续接=新图:场景B 角色=角色A 秒=5\n（六段式正文）\n```\n\n### 头行三个字段（**用等号 `=`，不要用冒号**）\n\n| 字段 | 取值 | 说明 |\n|---|---|---|\n| `图` | `图=2,3,5`（必填） | **本段只用这几张素材**，顺序即参考顺序。不写=喂全部素材（最多 8 张，多的会被丢掉）|\n| `续接` | `新图:素材名` / `新图:序号` / `上一段` | 唯一决定这一段的起幅图。名字写错不会报错，会**静默用第 1 张**；不想改名就写序号（`新图:2` = 面板第 2 张）|\n| `角色` | 素材画面板里的角色名，逗号分隔，**不能有空格** | 只记录进 json，不参与选图 |\n| `秒` | 整数，建议 4–10 | 引擎换算帧数并对齐 17k+5 网格 |\n\n### ⚠️ 最容易出错的一点\n\n**`新图:名字` 里的名字，必须和素材面板里的名字逐字相同。**\n\n写错不会报错——引擎会**静默改用第 1 张图**，你以为切了场景，结果还是第一张。\n\n### 图号是怎么编的\n\n| 占位 | 对应 |\n|---|---|\n| `<Picture 1>` | **本段的起幅图**（`新图` 那张，或上一段的尾帧）——⚠️ **和其他工作流不同**，别人那里 `<Picture 1>` 往往是角色图 |\n| `<Picture 2>` 起 | 素材面板里的图片，**按面板顺序**依次往后 |\n\n所以\"角色写在 `<Picture 2>`\"只是约定俗成——**以实际素材顺序为准**，你写正文前先问用户面板里的顺序。\n\n### 续接规则\n\n- **同一场景、动作连续** → `上一段`（接上一段尾帧，画面基本无缝）\n- **换场景 / 换人 / 换机位** → `新图:场景名`（硬切）\n- **一条链最多 3 段，到 3 段必须断**。实测第 4 段开始：亮度掉一半、饱和度涨 60%、皮肤出现橙红斑块\n- **断链不等于换场景**：同场景换个机位也可以 `新图:同一张场景图`（见下节）\n- 断链处是**硬切**，不是化过去——这正是电影剪辑要的效果\n\n### 接力的真实语义（重要）\n\n`续接=上一段` 是**把上段尾帧当参考图**，不是像素级硬接：构图、景别、人物姿态都可能被重新生成。\n要严格锁构图，用 `硬接模式=每段锚定上段尾帧`（需 FL2VA 主干），或单段重跑时用 `精确重跑=首尾帧`。\n\n### 断链的三种写法（按推荐度）\n\n| 写法 | 适用 | 例子 |\n|---|---|---|\n| **换机位**（推荐） | 同一场景、同一动作，只想清掉漂移 | `续接=新图:场景-伞下近景`，正文里把机位从\"平视\"改成\"低角度侧拍\" |\n| **换场景** | 剧情推进 | `续接=新图:客厅` |\n| **换机位 + 换景别** | 想更明显地区分镜头 | 中景 → 近景特写 |\n\n⚠️ **不要让相邻两段用同一机位 + 同一景别**，否则断链处看起来像\"卡了一下\"。\n断链的正确观感是\"切了一个镜头\"，不是\"画面跳了一下\"。\n\n### 每段选素材（`图=` 字段）\n\n素材面板按顺序编号 1、2、3…（**面板里删图或调序，序号会变，剧本要跟着改**）。\n\n```\n[1] 续接=新图:2 角色=男主,女主 图=2,3,4 秒=8\n[2] 续接=上一段 角色=男主,女主 图=3,4   秒=8\n[3] 续接=新图:5 角色=女主     图=5,4   秒=8\n```\n\n三种写法：\n\n| 写法 | 引擎行为 |\n|---|---|\n| `图=2,3,4` | 只喂第 2、3、4 张，顺序照你写的 |\n| 不写 `图=` | 喂**全部**素材（上限 8 张） |\n| `图=` 里写了不存在的序号 | 静默忽略那张，不报错 |\n\n**起幅图永远排参考图第一位**：`续接=新图:X` 的 X 会被自动提到最前；`续接=上一段` 时，上一段尾帧被插到最前。\n\n所以提示词里的编号要按**本段实际顺序**算：\n\n```\n新图:2 + 图=2,3,4   →  <Picture 1>=素材2（起幅） <Picture 2>=素材3 <Picture 3>=素材4\n上一段 + 图=3,4     →  <Picture 1>=上一段尾帧  <Picture 2>=素材3 <Picture 3>=素材4\n```\n\n---\n\n## 二、正文结构（六段式，缺一不可）\n\n```\nsubject_definitions:\n<Subject 1> is the exact frame in <Picture 1>: 场景与光线描述。\n<Subject 2> is the first person in <Picture 2>, with their exact face shape, hairstyle, hair colour, build and clothing.\n<Subject 3> is the second person in <Picture 3>, with their exact face shape, hairstyle, hair colour, build and clothing.\n\nsummary:\n[reference generation] One sentence: what happens in this shot.\n\nretention_analysis:\n<Subject 1> (frame 1): fully_preserved - same room, same light.\n<Subject 2> (throughout): fully_preserved.\n<Subject 3> (throughout): fully_preserved.\n\nSTAGING:\nWho is on frame left, who is on frame right, who sits and who stands, which side the camera is on.\nNobody changes seat, nobody crosses the line, and no fourth person appears.\n\ndetailed_description:\nFirst sentence fixes camera height, shot size, composition, light direction and depth of field. Then the action.\n[Shot 1] At 00:00.000, one small action.\n[Shot 2] At 00:02.000, one small action.\n[Shot 3] At 00:04.000, one small action.\n[Shot 4] At 00:06.000, <Subject 2> (S1) says quietly: \"…\" then the closing state.\n\noverall_soundscape:\nRoom tone, fabric rustle, a short breath. All faces stay fully inside the frame. No on-screen text, no captions, no subtitles.\nnon_diegetic_music:\nN/A\n```\n\n**正文用英文写**（模型对英文最稳）。中文只出现在双引号台词里。\n\n---\n\n## 三、写作规则（踩过的坑）\n\n1. **一拍一件事**（每约 2 秒一个动作点）：\n\n| 秒 | 拍数 | 时间码 |\n|---|---|---|\n| 4 | 2 拍 | 0 / 2 |\n| 5 | 3 拍 | 0 / 1.5 / 3.5 |\n| 6 | 3 拍 | 0 / 2 / 4 |\n| 8 | 4 拍 | 0 / 2 / 4 / 6 |\n| **10** | **5 拍** | **0 / 2 / 4 / 6 / 8** |\n| 12 | 6 拍 | 0 / 2 / 4 / 6 / 8 / 10 |\n\n拍数可以少一点（比如 10 秒写 3 拍也能跑），但**少于「秒数÷3」就容易自己加戏**。动作跨度大，模型会自己加戏然后崩。\n2. **构图先写**：`detailed_description` 第一句必须写死机位和景别，不要用 \"cinematic shot\" 这种空话开头——空话开头模型会把参考图直接当第一帧，出现空镜。\n3. **脸必须在框内**：每段结尾加 `All faces stay fully inside the frame`。特写越近越容易切头。\n4. **不越轴**：全片固定方位（\"角色A 永远在画面左，角色B 永远在画面右\"），并在 **STAGING** 每段复述，不能只写第一段。\n5. **身份要写出来**：只写 `is <Picture 2>` 会让两个同性角色越长越像。必须写脸型/发型/发色/配饰/服装。\n6. **多人同框 ≤ 3 人**，第三人必须是被动的（躺着、旁观）。三个人都在主动动 = 肢体粘连。\n7. **禁写极端特写**：只拍局部的大特写必崩。退到中近景，画面里至少留一张脸。\n8. **台词内联**：`<Subject 2> says quietly: \"…\"`，不要单独列台词行。\n9. **状态要复述**：每段开头说明\"他正躺着/她外套已脱\"，因为段与段独立生成，模型没有记忆。\n10. **别让角色自己站起来**：除非剧情要求，每段写死\"他一直仰躺/她一直跪坐\"，否则模型会把躺着的人画成站着。\n11. **台词要短**：一句 6–12 个字，超过 15 个字模型容易念糊、口型对不上。要表达更多，就多切一个镜头，别硬塞长句。\n12. **段落结尾收小**：每段最后一拍只做\"收尾小动作\"（收手、停住、转头、闭眼），不要在大幅动作中结束——下一段从静止起步会\"顿一下\"。\n13. **说话人必须编号**：多人同框时写 `<Subject 2> (S1) says quietly: \"…\"`，`(Sx)` 按**本段开口顺序**编（S1、S2…）。\n   不写会出问题：口型会分配给画面主控的那个人（实际发生过：A 说话、B 的嘴在动）。\n14. **道具做主语 + 被动语态**：写 `the gun is forced back toward her chest, still held in her hand`，\n    不要写「某人把枪推回去」。同一句只写一个道具；关键道具冲突时删掉次要道具。\n15. **外貌不写颜色词**：不要写 `purple-haired woman`（会生成完全不同的发色）。\n    统一写 `with her exact face and hair as in <Picture N>`，让模型去参考图里取。\n16. **`overall_soundscape` 只写物理声源**：不要写 `voices`、`then voices` 这种占位词。写成\n   `Room tone, fabric rustle, one short breath`。人声本身只放在 `detailed_description` 的台词处，不要在音效栏重复。\n\n### 景别词表（直接抄）\n\n`extreme close-up` 大特写 / `close-up` 特写 / `medium close-up` 近景 / `medium shot` 中景 /\n`medium wide shot` 中远景 / `wide shot` 全景\n\n---\n\n## 四、台词节奏（实操技巧）\n\n想让角色**说得快**，不要改文案，而是**压缩段长**：\n\n| 段长 | 效果 |\n|---|---|\n| 8 秒 | 正常语速，一句话说得完 |\n| 5–6 秒 | 明显偏快，两句话挤在一起 |\n| 4 秒 | 急促，像被打断 |\n\n所以\"这段台词要急一点\"→ 把 `秒=8` 改成 `秒=4`，台词不动。\n\n---\n\n## 五、交付前自检清单\n\n- [ ] 每块头行三个字段齐全，**用 `=` 而不是 `:`**\n- [ ] `角色=` 里没有多余空格（`角色=A,B` 正确；`角色=A, B` 会让解析出错）\n- [ ] `续接` 只有两种取值：`新图:名字` 或 `上一段`\n- [ ] 素材名与用户给的**逐字相同**\n- [ ] 每段的 `图=` 序号和素材面板顺序一致（改过面板顺序就重查一遍）\n- [ ] **每条链不超过 3 段**（数一下连续的 `续接=上一段` 有几条）\n- [ ] 断链处换了机位或景别（不是同机位硬切）\n- [ ] 每块都有 `subject_definitions / summary / retention_analysis / STAGING / detailed_description / overall_soundscape`\n- [ ] `[Shot N]` 带时间码，拍数 = 秒数 / 2\n- [ ] 每块都有 `All faces stay fully inside the frame`\n- [ ] 没有一段写\"两个动作同时进行\"\n- [ ] **正文里没有中文**（角色用 `<Subject n>`，中文只在双引号台词里）\n- [ ] 没台词的段写了 `No dialogue, no speech, no narration`\n- [ ] 每段 `overall_soundscape` 末尾有 `No on-screen text, no captions, no subtitles.`\n- [ ] 正文没有留空（至少：构图 + 站位 + 两个动作 + 环境声）\n\n> **乱念/字幕的成因**：H3 是音画联合生成，会把提示词里的中文和带引号的文字当成\"该说的 / 该显示的内容\"。正文越空、中文越多，越容易变成念稿 + 自动字幕。\n\n---\n\n## 六、成品示例（照这个写）\n\n```\n[1] 续接=新图:客厅沙发 角色=角色A,角色B 秒=8\nsubject_definitions:\n<Subject 1> is the exact frame in <Picture 1>: the living room with the sofa, keep its camera height, furniture layout and window light.\n<Subject 2> is the first woman in <Picture 2>, with her exact face, hairstyle, hair colour and build.\n<Subject 3> is the second woman in <Picture 3>, with her exact face, hairstyle, hair colour and build.\nsummary:\n[reference generation] Two women sit on the sofa and talk, one leaning on the other's shoulder.\nretention_analysis:\n<Subject 1> (frame 1): fully_preserved - same room, same sofa, same light.\n<Subject 2> (throughout): fully_preserved.\n<Subject 3> (throughout): fully_preserved.\nSTAGING:\nThe first woman sits on the left of the sofa, the second on the right, both in three-quarter view. Nobody stands up, nobody leaves, no third person appears.\ndetailed_description:\nMedium shot at seated eye level, the sofa across the lower half of frame, warm window light from frame left, shallow depth of field.\n[Shot 1] At 00:00.000, the first woman leans her head on the second one's shoulder.\n[Shot 2] At 00:02.000, the second woman (S1) turns her head and says quietly: \"就在这儿吧。\"\n[Shot 3] At 00:04.000, the first woman laughs and sits up straight.\n[Shot 4] At 00:06.000, both look toward frame right. All faces stay fully inside the frame.\noverall_soundscape:\nRoom tone, fabric on the sofa, one short breath. No on-screen text, no captions, no subtitles.\nnon_diegetic_music:\nN/A\n```\n\n---\n\n## 七、常见失败与修法\n\n| 现象 | 成因 | 修法 |\n|---|---|---|\n| 角色念出旁白似的乱语 | 正文里有中文人名 | 正文零中文，角色用 `<Subject n>` |\n| 角色念出站位/构图描述 | 提示词太短，模型退化成念稿 | 正文写满：构图/站位/动作/环境声 |\n| 画面出现字幕 | 提示词带引号文字或对话格式 | 没台词时连引号都不写，并加 `No captions / no subtitles` |\n| 开头出现空镜/没人 | `detailed_description` 第一句是空话 | 第一句直接写机位 + 景别 + 主体位置 |\n| 接缝处顿一下 | 尾帧是静止图，速度突变 | 上一段结尾动作幅度写小；或用 `秒` 更短的段 |\n| 人物越拍越像 | 只写 `is <Picture n>`，没写外貌 | 补脸型/发型/发色/配饰 |\n| 场景切错了 | `新图:名字` 与素材名不一致 | 逐字核对面板里的名字 |\n| 时长不对 | 头行 `秒=` 没写或写错 | 每块都写 `秒=` |\n| 台词含糊/口型对不上 | 一句话太长 | 压到 6–12 字，多切一个镜头 |\n| 接缝顿一下 | 上一段结尾在大幅动作中结束 | 最后一拍收小动作 |\n| 说话的人没动嘴 / 没说话的人嘴在动 | 台词前没标 `(Sx)` 说话人编号 | 写成 `<Subject 2> (S1) says: \"…\"` |\n| 出现念稿感或自动字幕 | 双引号台词被当成\"该念的内容\" | 换回 `<d>[中文] …</d>` 写法试一次（两种都验过，默认用引号） |\n"
+   },
+   "color": "#432",
+   "bgcolor": "#543"
+  },
+  {
+   "id": 53,
+   "type": "Fast Groups Bypasser (rgthree)",
+   "pos": [
+    2510,
+    -150
+   ],
+   "size": [
+    330,
+    120
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "label": "OPT_CONNECTION",
+     "name": "OPT_CONNECTION",
+     "type": "*",
+     "links": null
+    }
+   ],
+   "title": "开关 · 六、RelayVSR 超分（封装，关掉直通）",
+   "properties": {
+    "matchColors": "",
+    "matchTitle": "六、RelayVSR 超分（封装，关掉直通）",
+    "showNav": true,
+    "showAllGraphs": true,
+    "sort": "position",
+    "customSortAlphabet": "",
+    "toggleRestriction": "default",
+    "Node name for S&R": "Fast Groups Bypasser (rgthree)"
+   }
+  },
+  {
+   "id": 54,
+   "type": "Fast Groups Bypasser (rgthree)",
+   "pos": [
+    2980,
+    -160
+   ],
+   "size": [
+    320,
+    120
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "label": "OPT_CONNECTION",
+     "name": "OPT_CONNECTION",
+     "type": "*",
+     "links": null
+    }
+   ],
+   "title": "开关 · 七、ReCaVSR 超分（启用开关控制）",
+   "properties": {
+    "matchColors": "",
+    "matchTitle": "七、ReCaVSR 超分（启用开关控制）",
+    "showNav": true,
+    "showAllGraphs": true,
+    "sort": "position",
+    "customSortAlphabet": "",
+    "toggleRestriction": "default",
+    "Node name for S&R": "Fast Groups Bypasser (rgthree)"
+   }
+  },
+  {
+   "id": 59,
+   "type": "VancoScript",
+   "pos": [
+    540,
+    770
+   ],
+   "size": [
+    590,
+    250
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "label": "分镜文本",
+     "localized_name": "分镜文本",
+     "name": "分镜文本",
+     "type": "STRING",
+     "widget": {
+      "name": "分镜文本"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "label": "分镜文本",
+     "localized_name": "分镜文本",
+     "name": "分镜文本",
+     "type": "STRING",
+     "links": [
+      60
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VancoScript"
+   },
+   "widgets_values": [
+    "（把剧本粘到这里）"
+   ],
+   "widgets_values_named": {
+    "分镜文本": "[1] 续接=新图:1 角色=女主 图=1,2 秒=4\nsubject_definitions:\n<Subject 1> is the exact frame in <Picture 1>: the living room, keep its exact camera height, furniture layout, wall placement and window light.\n<Subject 2> is the woman in <Picture 2>, with her exact face, hairstyle and build as in the reference; at the start of the shot she is still wearing a thin top and short bottoms.\nsummary:\n[reference generation] Four-second shot: she pulls her top off over her head, then pushes her bottoms down over her hips, ending fully naked in the middle of the living room.\nretention_analysis:\n<Subject 1> (frame 1): fully_preserved - same room, same furniture layout, same window light.\n<Subject 2> (throughout): fully_preserved.\nSTAGING:\nShe stands in the middle of the living room, facing the camera at a slight three-quarter angle, her body centred in the frame. The camera never moves and never circles her; she never turns her back to the camera, never walks toward the lens, and no second person ever appears.\ndetailed_description:\nMedium shot at chest height on the room's long axis, her whole body from head to knees centred in frame, soft window light from frame left, the room falling away behind her in shallow depth of field.\n[Shot 1] At 00:00.000, she lifts both arms, drags the thin top up over her head and lets it drop behind her, her chest bare.\n[Shot 2] At 00:02.000, she hooks both thumbs into her short bottoms and pushes them down over her hips until they slide to the floor, leaving her naked. All faces stay fully inside the frame.\noverall_soundscape:\nRoom tone, fabric dragged over skin, cloth dropping on the floor, one short breath. All faces stay fully inside the frame. No dialogue, no spoken words, no narration. No on-screen text, no captions, no subtitles.\nnon_diegetic_music:\nN/A\n\n[2] 续接=上一段 角色=女主 图=2 秒=4\nsubject_definitions:\n<Subject 1> is the exact frame in <Picture 1>: continue without a cut, the same living room, the same light and the same camera height.\n<Subject 2> is the same woman in <Picture 2>, with her exact face, hairstyle and build as in the reference; she is already fully naked and standing barefoot on the floor.\nsummary:\n[reference generation] Four-second shot: she runs both palms down her own body from her chest to her belly, then slides one hand down between her thighs.\nretention_analysis:\n<Subject 1> (frame 1): fully_preserved - same room, same corner of the room, same light.\n<Subject 2> (throughout): fully_preserved.\nSTAGING:\nShe stays standing on the same spot in the middle of the room, facing the camera at a slight three-quarter angle, her feet planted a little apart. She never turns away, never sits down, never crosses to the other side of the room, and no second person ever appears.\ndetailed_description:\nMedium shot at chest height on the same axis as before, her naked body from head to knees in frame, window light from frame left, shallow depth of field with the room soft behind her.\n[Shot 1] At 00:00.000, she slides both palms slowly down from her chest, over her breasts and her belly, her fingers spread.\n[Shot 2] At 00:02.000, she presses one hand down between her thighs, her hips tipping forward. All faces stay fully inside the frame.\noverall_soundscape:\nRoom tone, bare feet shifting on the floor, palms sliding over skin, her breath shortening. All faces stay fully inside the frame. No dialogue, no spoken words, no narration. No on-screen text, no captions, no subtitles.\nnon_diegetic_music:\nN/A\n\n[3] 续接=上一段 角色=女主 图=2 秒=4\nsubject_definitions:\n<Subject 1> is the exact frame in <Picture 1>: continue without a cut, the same living room, the same light and the same camera height.\n<Subject 2> is the same woman in <Picture 2>, with her exact face, hairstyle and build as in the reference; she is still fully naked and standing on the floor, one hand already between her thighs.\nsummary:\n[reference generation] Four-second shot: her fingers work faster between her legs while her other hand grips her own breast, and her head falls back.\nretention_analysis:\n<Subject 1> (frame 1): fully_preserved.\n<Subject 2> (throughout): fully_preserved.\nSTAGING:\nShe stays standing on the same spot, facing the camera at a slight three-quarter angle, her knees a little bent. The camera holds its position; she never turns away, never sinks down, and no second person ever appears.\ndetailed_description:\nMedium close shot at chest height on the same axis, her naked body from head to hip inside the frame, window light from frame left raking across her shoulder, shallow depth of field.\n[Shot 1] At 00:00.000, her fingers move faster between her thighs and her wrist presses in hard.\n[Shot 2] At 00:02.000, her other hand comes up and grips her own breast with the fingers sinking into it, and her head falls back with her eyes closing. All faces stay fully inside the frame.\noverall_soundscape:\nRoom tone, bare feet on the floor, skin sliding, her quickening breath close to the mic. All faces stay fully inside the frame. No dialogue, no spoken words, no narration. No on-screen text, no captions, no subtitles.\nnon_diegetic_music:\nN/A"
+   }
+  },
+  {
+   "id": 61,
+   "type": "MarkdownNote",
+   "pos": [
+    -160,
+    360
+   ],
+   "size": [
+    240,
+    400
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "title": "Note: Size Settings Reference",
+   "properties": {
+    "widget_ue_connectable": {}
+   },
+   "widgets_values": [
+    "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+   ],
+   "widgets_values_named": {
+    "text": "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+   },
+   "color": "#222",
+   "bgcolor": "#000"
+  },
+  {
+   "id": 62,
+   "type": "easy cleanGpuUsed",
+   "pos": [
+    2040,
+    790
+   ],
+   "size": [
+    140,
+    30
+   ],
+   "flags": {
+    "collapsed": false
+   },
+   "order": 19,
+   "mode": 0,
+   "inputs": [
+    {
+     "label": "anything",
+     "localized_name": "输入任何",
+     "name": "anything",
+     "type": "*",
+     "link": 66
+    }
+   ],
+   "outputs": [
+    {
+     "label": "output",
+     "localized_name": "output",
+     "name": "output",
+     "type": "*",
+     "links": null
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "easy cleanGpuUsed"
+   }
+  },
+  {
+   "id": 63,
+   "type": "MarkdownNote",
+   "pos": [
+    -760,
+    460
+   ],
+   "size": [
+    470,
+    290
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "title": "📘 使用方法（分镜编排引擎 v1）",
+   "properties": {},
+   "widgets_values": [
+    "# 使用方法 · Vanco 分镜编排引擎 v1（2026-11-17）\n\n## 1. 成片生产\n- 一次点击跑完整片（10–40 段）：填剧本 + 接素材 → 运行\n- 每段不同时长：头行 `秒=8`\n- 每段不同素材：头行 `图=2,3,5`（**强烈建议每段都写**）\n- 段间硬切换场景：`续接=新图:N`\n- 段间软衔接（参考上段）：`续接=上一段`\n- 自动拼接：`接缝处理` = 关 / 微淡化 / 微淡化+逐段色彩归一\n- 提升细节：`开二采`（1.2–1.5×）\n\n## 2. 局部修改\n- 只重跑第 7 段：`只跑第N段=7` + `下游处理=只跑这一段`\n- 重跑第 7 段并连带后面：`下游处理=级联重跑`\n- 重跑第 7 段且结尾必须接上第 8 段：`精确重跑=首尾帧`（要求第 8 段已存在）\n- 上游被改过会提醒：`上游已变时=停下提醒`\n- 判断哪些段要重跑：看 `分段/segNN_vN.json` 里的「剧情指纹」\n\n## 3. 质量管控\n- 链太长会警告：解析剧本时统计连续 `续接=上一段`，>3 段报警\n- 色彩越跑越脏：`接缝处理=微淡化+逐段色彩归一`\n- 人数不对：`人物检测`（期望值自动取头行 `角色=` 的个数）\n- 开头空镜：`自动裁空镜`（会连带裁音频，保持同步）\n- 每段耗时分布：日志 `分段耗时 ▼ 采样 | 解码 | 检测/色彩 | 落盘`\n- 进度：ComfyUI 全局进度条显示「第几段 / 共几段」\n\n## 4. 长片与稳定性\n- 26+ 段不爆内存：`省内存模式=开`（代价：画布不输出成片，只留 `成片/合并-*.mp4`）\n- 长时间跑不越跑越挤：`段间清理`（只清缓存 / 卸载模型+清缓存）\n- 中断后接着跑：`只跑第N段=N`，前面自动复用已有分段\n- 看单段效果：直接打开 `分段/` 目录\n\n## 5. 它做不到的事\n- ❌ 自动写分镜（需要你提供剧本）\n- ❌ 超过 3 段连续接力完全不漂（模型特性）\n- ❌ 像素级无缝（`续接=上一段` 是参考引导，会重新构图）\n- ❌ 保证音频质量（二采可能伤音频，未验证）\n- ❌ 显存紧张时的局部模糊（VAE 分块解码所致）\n- ❌ 多段并行生成（引擎串行）\n- ❌ 一个节点跑多个剧本\n- ❌ 自动判断\"这段该用哪张图\"（要写 `图=`）\n\n## 6. 素材与剧本的对应规则\n1. 素材**文件名不用改**，引擎按面板顺序编号 1、2、3…\n2. 改了面板顺序 → 剧本里的 `图=` 要跟着改\n3. 每段 `图=` 只喂你指定的那几张；**不写就喂全部（上限 8 张）**\n4. 提示词里的 `<Picture 1>` 永远是本段**起幅图**，`<Picture k>` 是 `图=` 里第 k 张\n5. `续接=新图:X` 的 X 会被自动提到参考图第一位\n\n## 7. 输出位置\n```\noutput/视频合集/Vanco/多段导演台/<剧本名>/\n├── 分段/   segNN_vN.mp4 + .json + _last.png（无损尾帧）\n└── 成片/   合并-<时间戳>.mp4（无元数据，一次编码）\n```\n"
+   ],
+   "widgets_values_named": {
+    "text": "# 使用方法 · Vanco 分镜编排引擎 v1（2026-11-17）\n\n## 1. 成片生产\n- 一次点击跑完整片（10–40 段）：填剧本 + 接素材 → 运行\n- 每段不同时长：头行 `秒=8`\n- 每段不同素材：头行 `图=2,3,5`（**强烈建议每段都写**）\n- 段间硬切换场景：`续接=新图:N`\n- 段间软衔接（参考上段）：`续接=上一段`\n- 自动拼接：`接缝处理` = 关 / 微淡化 / 微淡化+逐段色彩归一\n- 提升细节：`开二采`（1.2–1.5×）\n\n## 2. 局部修改\n- 只重跑第 7 段：`只跑第N段=7` + `下游处理=只跑这一段`\n- 重跑第 7 段并连带后面：`下游处理=级联重跑`\n- 重跑第 7 段且结尾必须接上第 8 段：`精确重跑=首尾帧`（要求第 8 段已存在）\n- 上游被改过会提醒：`上游已变时=停下提醒`\n- 判断哪些段要重跑：看 `分段/segNN_vN.json` 里的「剧情指纹」\n\n## 3. 质量管控\n- 链太长会警告：解析剧本时统计连续 `续接=上一段`，>3 段报警\n- 色彩越跑越脏：`接缝处理=微淡化+逐段色彩归一`\n- 人数不对：`人物检测`（期望值自动取头行 `角色=` 的个数）\n- 开头空镜：`自动裁空镜`（会连带裁音频，保持同步）\n- 每段耗时分布：日志 `分段耗时 ▼ 采样 | 解码 | 检测/色彩 | 落盘`\n- 进度：ComfyUI 全局进度条显示「第几段 / 共几段」\n\n## 4. 长片与稳定性\n- 26+ 段不爆内存：`省内存模式=开`（代价：画布不输出成片，只留 `成片/合并-*.mp4`）\n- 长时间跑不越跑越挤：`段间清理`（只清缓存 / 卸载模型+清缓存）\n- 中断后接着跑：`只跑第N段=N`，前面自动复用已有分段\n- 看单段效果：直接打开 `分段/` 目录\n\n## 5. 它做不到的事\n- ❌ 自动写分镜（需要你提供剧本）\n- ❌ 超过 3 段连续接力完全不漂（模型特性）\n- ❌ 像素级无缝（`续接=上一段` 是参考引导，会重新构图）\n- ❌ 保证音频质量（二采可能伤音频，未验证）\n- ❌ 显存紧张时的局部模糊（VAE 分块解码所致）\n- ❌ 多段并行生成（引擎串行）\n- ❌ 一个节点跑多个剧本\n- ❌ 自动判断\"这段该用哪张图\"（要写 `图=`）\n\n## 6. 素材与剧本的对应规则\n1. 素材**文件名不用改**，引擎按面板顺序编号 1、2、3…\n2. 改了面板顺序 → 剧本里的 `图=` 要跟着改\n3. 每段 `图=` 只喂你指定的那几张；**不写就喂全部（上限 8 张）**\n4. 提示词里的 `<Picture 1>` 永远是本段**起幅图**，`<Picture k>` 是 `图=` 里第 k 张\n5. `续接=新图:X` 的 X 会被自动提到参考图第一位\n\n## 7. 输出位置\n```\noutput/视频合集/Vanco/多段导演台/<剧本名>/\n├── 分段/   segNN_vN.mp4 + .json + _last.png（无损尾帧）\n└── 成片/   合并-<时间戳>.mp4（无元数据，一次编码）\n```\n"
+   },
+   "color": "#1e3a5f",
+   "bgcolor": "#1e3a5f"
+  },
+  {
+   "id": 64,
+   "type": "VancoH3ModelLoader",
+   "pos": [
+    480,
+    80
+   ],
+   "size": [
+    590,
+    282
+   ],
+   "flags": {},
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "label": "fl2va_model",
+     "localized_name": "fl2va_model",
+     "name": "fl2va_model",
+     "type": "COMBO",
+     "widget": {
+      "name": "fl2va_model"
+     },
+     "link": null
+    },
+    {
+     "label": "ref2va_model",
+     "localized_name": "ref2va_model",
+     "name": "ref2va_model",
+     "type": "COMBO",
+     "widget": {
+      "name": "ref2va_model"
+     },
+     "link": null
+    },
+    {
+     "label": "text_encoder",
+     "localized_name": "text_encoder",
+     "name": "text_encoder",
+     "type": "COMBO",
+     "widget": {
+      "name": "text_encoder"
+     },
+     "link": null
+    },
+    {
+     "label": "video_vae",
+     "localized_name": "video_vae",
+     "name": "video_vae",
+     "type": "COMBO",
+     "widget": {
+      "name": "video_vae"
+     },
+     "link": null
+    },
+    {
+     "label": "audio_vae",
+     "localized_name": "audio_vae",
+     "name": "audio_vae",
+     "type": "COMBO",
+     "widget": {
+      "name": "audio_vae"
+     },
+     "link": null
+    },
+    {
+     "label": "non_h3_policy",
+     "localized_name": "non_h3_policy",
+     "name": "non_h3_policy",
+     "type": "COMBO",
+     "widget": {
+      "name": "non_h3_policy"
+     },
+     "link": null
+    },
+    {
+     "label": "注意力加速(Sage)",
+     "localized_name": "注意力加速(Sage)",
+     "name": "注意力加速(Sage)",
+     "type": "COMBO",
+     "widget": {
+      "name": "注意力加速(Sage)"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "label": "h3_bundle",
+     "localized_name": "h3_bundle",
+     "name": "h3_bundle",
+     "type": "MINIMAX_H3_BUNDLE",
+     "links": [
+      72
+     ]
+    },
+    {
+     "label": "model",
+     "localized_name": "model",
+     "name": "model",
+     "type": "MODEL",
+     "links": [
+      68
+     ]
+    },
+    {
+     "label": "clip",
+     "localized_name": "clip",
+     "name": "clip",
+     "type": "CLIP",
+     "links": [
+      69
+     ]
+    },
+    {
+     "label": "video_vae",
+     "localized_name": "video_vae",
+     "name": "video_vae",
+     "type": "VAE",
+     "links": [
+      70
+     ]
+    },
+    {
+     "label": "audio_vae",
+     "localized_name": "audio_vae",
+     "name": "audio_vae",
+     "type": "VAE",
+     "links": [
+      71
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VancoH3ModelLoader"
+   },
+   "widgets_values": [
+    "MiniMax_H3\\PRISM_DMAD_PDMD_int8.safetensors",
+    "MiniMax_H3\\PRISM_DMAD_PDMD_int8.safetensors",
+    "MiniMax_H3\\qwen3vl_32b_h3_ultra_uncensored_heretic_int8_convrot.safetensors",
+    "minimax_h3_video_vae_fp16.safetensors",
+    "minimax_h3_audio_vae_fp32.safetensors",
+    "自动回落",
+    "关闭"
+   ],
+   "widgets_values_named": {
+    "fl2va_model": "MiniMax_H3\\PRISM_DMAD_PDMD_int8.safetensors",
+    "ref2va_model": "MiniMax_H3\\PRISM_DMAD_PDMD_int8.safetensors",
+    "text_encoder": "MiniMax_H3\\qwen3vl_32b_h3_ultra_uncensored_heretic_int8_convrot.safetensors",
+    "video_vae": "minimax_h3_video_vae_fp16.safetensors",
+    "audio_vae": "minimax_h3_audio_vae_fp32.safetensors",
+    "non_h3_policy": "自动回落",
+    "注意力加速(Sage)": "关闭"
+   }
+  },
+  {
+   "id": 65,
+   "type": "VancoOutSet",
+   "pos": [
+    1140,
+    60
+   ],
+   "size": [
+    300,
+    178
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [
+    {
+     "label": "剧本名",
+     "localized_name": "剧本名",
+     "name": "剧本名",
+     "type": "STRING",
+     "widget": {
+      "name": "剧本名"
+     },
+     "link": null
+    },
+    {
+     "label": "保存分段",
+     "localized_name": "保存分段",
+     "name": "保存分段",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "保存分段"
+     },
+     "link": null
+    },
+    {
+     "label": "成片只存画布",
+     "localized_name": "成片只存画布",
+     "name": "成片只存画布",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "成片只存画布"
+     },
+     "link": null
+    },
+    {
+     "label": "引擎也存成片",
+     "localized_name": "引擎也存成片",
+     "name": "引擎也存成片",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "引擎也存成片"
+     },
+     "link": null
+    },
+    {
+     "label": "省内存模式",
+     "localized_name": "省内存模式",
+     "name": "省内存模式",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "省内存模式"
+     },
+     "link": null
+    },
+    {
+     "label": "段间清理",
+     "localized_name": "段间清理",
+     "name": "段间清理",
+     "type": "COMBO",
+     "widget": {
+      "name": "段间清理"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "label": "输出设置",
+     "localized_name": "输出设置",
+     "name": "输出设置",
+     "type": "STRING",
+     "links": [
+      73
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VancoOutSet"
+   },
+   "widgets_values": [
+    "未命名剧本",
+    true,
+    true,
+    false,
+    false,
+    "卸载模型+清缓存"
+   ],
+   "widgets_values_named": {
+    "剧本名": "Vanco导演台测试专用文件夹",
+    "保存分段": true,
+    "成片只存画布": true,
+    "引擎也存成片": false,
+    "省内存模式": false,
+    "段间清理": "卸载模型+清缓存"
+   }
+  },
+  {
+   "id": 66,
+   "type": "VancoRunSet",
+   "pos": [
+    1150,
+    280
+   ],
+   "size": [
+    280,
+    160
+   ],
+   "flags": {},
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "label": "只跑第N段",
+     "localized_name": "只跑第N段",
+     "name": "只跑第N段",
+     "type": "INT",
+     "widget": {
+      "name": "只跑第N段"
+     },
+     "link": null
+    },
+    {
+     "label": "下游处理",
+     "localized_name": "下游处理",
+     "name": "下游处理",
+     "type": "COMBO",
+     "widget": {
+      "name": "下游处理"
+     },
+     "link": null
+    },
+    {
+     "label": "重跑后交给画布",
+     "localized_name": "重跑后交给画布",
+     "name": "重跑后交给画布",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "重跑后交给画布"
+     },
+     "link": null
+    },
+    {
+     "label": "上游已变时",
+     "localized_name": "上游已变时",
+     "name": "上游已变时",
+     "type": "COMBO",
+     "widget": {
+      "name": "上游已变时"
+     },
+     "link": null
+    },
+    {
+     "label": "精确重跑",
+     "localized_name": "精确重跑",
+     "name": "精确重跑",
+     "type": "COMBO",
+     "widget": {
+      "name": "精确重跑"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "label": "重跑设置",
+     "localized_name": "重跑设置",
+     "name": "重跑设置",
+     "type": "STRING",
+     "links": [
+      74
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VancoRunSet"
+   },
+   "widgets_values": [
+    0,
+    "级联重跑",
+    false,
+    "停下提醒",
+    "关"
+   ],
+   "widgets_values_named": {
+    "只跑第N段": 0,
+    "下游处理": "级联重跑",
+    "重跑后交给画布": false,
+    "上游已变时": "停下提醒",
+    "精确重跑": "关"
+   }
+  },
+  {
+   "id": 67,
+   "type": "VancoQcSet",
+   "pos": [
+    1150,
+    490
+   ],
+   "size": [
+    290,
+    202
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [
+    {
+     "label": "硬接模式",
+     "localized_name": "硬接模式",
+     "name": "硬接模式",
+     "type": "COMBO",
+     "widget": {
+      "name": "硬接模式"
+     },
+     "link": null
+    },
+    {
+     "label": "接缝处理",
+     "localized_name": "接缝处理",
+     "name": "接缝处理",
+     "type": "COMBO",
+     "widget": {
+      "name": "接缝处理"
+     },
+     "link": null
+    },
+    {
+     "label": "参考尾帧数",
+     "localized_name": "参考尾帧数",
+     "name": "参考尾帧数",
+     "type": "COMBO",
+     "widget": {
+      "name": "参考尾帧数"
+     },
+     "link": null
+    },
+    {
+     "label": "尾帧取样",
+     "localized_name": "尾帧取样",
+     "name": "尾帧取样",
+     "type": "COMBO",
+     "widget": {
+      "name": "尾帧取样"
+     },
+     "link": null
+    },
+    {
+     "label": "人物检测",
+     "localized_name": "人物检测",
+     "name": "人物检测",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "人物检测"
+     },
+     "link": null
+    },
+    {
+     "label": "检测帧数",
+     "localized_name": "检测帧数",
+     "name": "检测帧数",
+     "type": "INT",
+     "widget": {
+      "name": "检测帧数"
+     },
+     "link": null
+    },
+    {
+     "label": "自动裁空镜",
+     "localized_name": "自动裁空镜",
+     "name": "自动裁空镜",
+     "type": "BOOLEAN",
+     "widget": {
+      "name": "自动裁空镜"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "label": "质检设置",
+     "localized_name": "质检设置",
+     "name": "质检设置",
+     "type": "STRING",
+     "links": [
+      75
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "VancoQcSet"
+   },
+   "widgets_values": [
+    "每段锚定上段尾帧",
+    "微淡化+逐段色彩归一",
+    "1",
+    "最后一帧",
+    true,
+    12,
+    true
+   ],
+   "widgets_values_named": {
+    "硬接模式": "每段锚定上段尾帧",
+    "接缝处理": "微淡化+逐段色彩归一",
+    "参考尾帧数": "1",
+    "尾帧取样": "最后一帧",
+    "人物检测": true,
+    "检测帧数": 12,
+    "自动裁空镜": true
+   }
+  },
+  {
+   "id": 68,
+   "type": "MarkdownNote",
+   "pos": [
+    840,
+    -450
+   ],
+   "size": [
+    300,
+    150
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "title": "© 作者与许可",
+   "properties": {},
+   "widgets_values": [
+    "作者：Vanco\n项目：Vanco 分镜编排引擎 v1\n许可：GPL-3.0-or-later（可自由使用/修改/再分发，须保留本署名与许可）\n提示词模板：v1 / v2（见 docs/）\n本工作流与节点包为原创实现，不含任何第三方插件的源代码副本。\n"
+   ],
+   "color": "#2d2138",
+   "bgcolor": "#2d2138"
+  }
+ ],
+ "links": [
+  [
+   6,
+   6,
+   0,
+   8,
+   4,
+   "IMAGE"
+  ],
+  [
+   7,
+   6,
+   1,
+   8,
+   5,
+   "STRING"
+  ],
+  [
+   10,
+   8,
+   0,
+   9,
+   0,
+   "IMAGE"
+  ],
+  [
+   11,
+   8,
+   1,
+   9,
+   1,
+   "AUDIO"
+  ],
+  [
+   12,
+   9,
+   0,
+   11,
+   0,
+   "VIDEO"
+  ],
+  [
+   40,
+   9,
+   0,
+   40,
+   0,
+   "VIDEO"
+  ],
+  [
+   44,
+   51,
+   0,
+   8,
+   0,
+   "MODEL"
+  ],
+  [
+   49,
+   7,
+   3,
+   8,
+   6,
+   "FLOAT"
+  ],
+  [
+   60,
+   59,
+   0,
+   8,
+   7,
+   "STRING"
+  ],
+  [
+   66,
+   12,
+   0,
+   62,
+   0,
+   "VIDEO"
+  ],
+  [
+   67,
+   51,
+   2,
+   8,
+   8,
+   "MINIMAX_H3_BUNDLE"
+  ],
+  [
+   68,
+   64,
+   1,
+   51,
+   0,
+   "MODEL"
+  ],
+  [
+   69,
+   64,
+   2,
+   8,
+   1,
+   "CLIP"
+  ],
+  [
+   70,
+   64,
+   3,
+   8,
+   2,
+   "VAE"
+  ],
+  [
+   71,
+   64,
+   4,
+   8,
+   3,
+   "VAE"
+  ],
+  [
+   72,
+   64,
+   0,
+   51,
+   2,
+   "MINIMAX_H3_BUNDLE"
+  ],
+  [
+   64,
+   7,
+   0,
+   8,
+   13,
+   "INT"
+  ],
+  [
+   65,
+   7,
+   1,
+   8,
+   14,
+   "INT"
+  ],
+  [
+   73,
+   65,
+   0,
+   8,
+   9,
+   "STRING"
+  ],
+  [
+   74,
+   66,
+   0,
+   8,
+   10,
+   "STRING"
+  ],
+  [
+   75,
+   67,
+   0,
+   8,
+   11,
+   "STRING"
+  ],
+  [
+   14,
+   9,
+   0,
+   12,
+   0,
+   "VIDEO"
+  ],
+  [
+   13,
+   11,
+   0,
+   10,
+   0,
+   "VIDEO"
+  ],
+  [
+   41,
+   40,
+   0,
+   41,
+   0,
+   "VIDEO"
+  ]
+ ],
+ "groups": [
+  {
+   "id": 1,
+   "title": "一、素材（多图上传）",
+   "bounding": [
+    100,
+    -10,
+    350,
+    430
+   ],
+   "color": "#3f789e",
+   "flags": {},
+   "font_size": 26,
+   "title_align": "left"
+  },
+  {
+   "id": 2,
+   "title": "二、参数",
+   "bounding": [
+    100,
+    450,
+    420,
+    290
+   ],
+   "color": "#3a7",
+   "flags": {},
+   "font_size": 26,
+   "title_align": "left"
+  },
+  {
+   "id": 3,
+   "title": "三、模型",
+   "bounding": [
+    460,
+    -10,
+    640,
+    400
+   ],
+   "color": "#a1309b",
+   "flags": {},
+   "font_size": 26,
+   "title_align": "left"
+  },
+  {
+   "id": 4,
+   "title": "四、引擎（分镜文本 + 开关）",
+   "bounding": [
+    1460,
+    -10,
+    550,
+    700
+   ],
+   "color": "#b58b2a",
+   "flags": {},
+   "font_size": 26,
+   "title_align": "left"
+  },
+  {
+   "id": 5,
+   "title": "五、输出（含超分）",
+   "bounding": [
+    2020,
+    -10,
+    370,
+    770
+   ],
+   "color": "#3f789e",
+   "flags": {},
+   "font_size": 26,
+   "title_align": "left"
+  },
+  {
+   "id": 6,
+   "title": "六、RelayVSR 超分（封装，关掉直通）",
+   "bounding": [
+    2410,
+    -10,
+    480,
+    770
+   ],
+   "color": "#a1309b",
+   "flags": {},
+   "font_size": 26,
+   "title_align": "left"
+  },
+  {
+   "id": 7,
+   "title": "七、ReCaVSR 超分（启用开关控制）",
+   "bounding": [
+    2910,
+    -10,
+    450,
+    770
+   ],
+   "color": "#3f789e",
+   "flags": {},
+   "font_size": 26,
+   "title_align": "left"
+  },
+  {
+   "id": 8,
+   "title": "设置",
+   "bounding": [
+    1130,
+    -10,
+    320,
+    712
+   ],
+   "color": "#3f789e",
+   "flags": {},
+   "font_size": 20,
+   "title_align": "left"
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.7341755491825535,
+   "offset": [
+    567.3170134906824,
+    537.7194791644908
+   ]
+  },
+  "frontendVersion": "1.59.1",
+  "VHS_latentpreview": false,
+  "VHS_latentpreviewrate": 0,
+  "VHS_MetadataImage": true,
+  "VHS_KeepIntermediate": true
+ },
+ "version": 0.4
+}

@@ -1,0 +1,7 @@
+ComfyUI-Vanco-Suite 运行依赖（一般 ComfyUI 环境已具备）
+
+# 本包只用到 ComfyUI 内置 API 与 ONNX 推理，无需额外 pip 安装
+# 如需人物检测，请把 yolov8n.onnx 放到 ComfyUI/models/yolo/
+onnxruntime>=1.16
+numpy
+Pillow
